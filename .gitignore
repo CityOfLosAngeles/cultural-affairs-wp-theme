@@ -1,0 +1,13 @@
+# Ignore Sass and Compass
+node_modules/
+.sass-cache/
+
+#Ignore mac files
+.DS_Store
+
+#Ignore original files from merge
+.orig
+
+#Ignore sublime files
+.sublime-project
+.sublime-workspace

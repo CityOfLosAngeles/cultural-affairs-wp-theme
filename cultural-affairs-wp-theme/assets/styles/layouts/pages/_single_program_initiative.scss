@@ -1,0 +1,72 @@
+.single-program_initiative {
+	.breadcrumbs {
+		background-color: $green-blue;
+	}
+	.top-spacing {
+		padding-top: 30px;
+		@media ( min-width: $screen-sm ) {
+			padding-top: 60px;
+		}
+	}
+	.bottom-spacing {
+		padding-bottom: 30px;
+
+		@media ( min-width: $screen-md ) {
+			padding-bottom: 60px;
+		}
+	}
+	.wrap{
+		// Main Area
+		.main-area {
+			clear: left;
+		}
+		.main article > .container {
+			@media ( max-width: $screen-sm ) {
+				padding: 0;
+			}
+		}
+		// Side Area
+		.overview-area {
+			padding-bottom: 30px;
+			@media ( min-width: $screen-md ) {
+				float: right;
+				padding-bottom: 0;
+			}
+		}
+		h1 {
+			color: $green-blue;
+			&.entry-title {
+				margin-bottom: 25px;
+			}
+		}
+		a {
+			color: $green-blue;
+			text-decoration: none;
+			&:hover, &:active, &:focus {
+				text-decoration: underline;
+			}
+			&.btn {
+				color: $grey;
+				&:hover, &:active, &:focus {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+		.photo-area {
+			margin-bottom: 15px;
+		}
+		.faq-section {
+			ul {
+				padding-left: 0px;
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+		.side-item {
+			border-left: 1px solid $green-blue;
+			padding-left: 15px;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.1 (15681) - http://www.bohemiancoding.com/sketch -->
+    <title>bt-back-to-top</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Percent-for-Public-Art" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Mobile/Percent-for-Public-Art" sketch:type="MSArtboardGroup" transform="translate(-276.000000, -2618.000000)" fill="#595959">
+            <g id="Mobile/Footer-Expanded" sketch:type="MSLayerGroup" transform="translate(0.000000, 1852.000000)">
+                <g id="container-2" transform="translate(15.000000, 749.000000)" sketch:type="MSShapeGroup">
+                    <g id="back-to-top" transform="translate(243.000000, 0.444444)">
+                        <g id="icon-16x16-arrow" transform="translate(24.074074, 23.773148) rotate(-90.000000) translate(-24.074074, -23.773148) translate(16.074074, 15.773148)">
+                            <path d="M11.8180445,8.91666667 L1.99850233,8.91666667 C1.44704472,8.91666667 1,8.4769117 1,7.92592593 C1,7.37875492 1.44748943,6.93518519 1.99850233,6.93518519 L11.8311391,6.93518519 L9.28597509,4.39002118 C8.90288754,4.00693363 8.90328744,3.38542609 9.29289322,2.99582031 C9.67980154,2.60891199 10.3137978,2.61560586 10.6870941,2.98890219 L14.9566656,7.2584737 C15.3397531,7.64156125 15.3393532,8.26306878 14.9497475,8.65267456 L14.249188,9.35323406 L14.2295461,9.3335922 L10.7359999,12.8271384 C10.3439822,13.2191561 9.71232931,13.2230894 9.31908236,12.8298424 C8.92855807,12.4393181 8.92935447,11.8053567 9.32178633,11.4129249 L11.8180445,8.91666667 Z" id="bt-back-to-top"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

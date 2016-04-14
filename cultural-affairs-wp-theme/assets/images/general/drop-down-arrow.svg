@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-16x16-search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Cultural-Centers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD/Cultutal-Centers-Detail-Page" sketch:type="MSArtboardGroup" transform="translate(-730.000000, -98.000000)">
+            <g id="Desktop-HD/Header" sketch:type="MSLayerGroup" transform="translate(0.000000, 32.000000)">
+                <g id="content" transform="translate(60.000000, 40.000000)" sketch:type="MSShapeGroup">
+                    <g id="nav" transform="translate(417.000000, 19.000000)">
+                        <g id="ARTS-&amp;-CULTURE" transform="translate(88.000000, 0.000000)">
+                            <g id="icon-16x16-search" transform="translate(164.000000, 2.000000)">
+                                <rect id="bounds" x="0" y="0" width="16" height="16"></rect>
+                                <path d="M7.65158532,13.0630617 C7.84560465,13.2569976 8.15551525,13.261521 8.36334447,13.0536022 L14.346803,7.06756586 C14.5458774,6.86840569 14.5558808,6.55564145 14.3503164,6.35016555 L13.6496836,5.64983445 C13.4525496,5.45278537 13.1400475,5.446149 12.9454694,5.64124953 L8.34727152,10.2517945 C8.15547875,10.4441022 7.84729775,10.4468862 7.6527085,10.2517745 L3.05424604,5.640965 C2.86244224,5.4486462 2.5556415,5.44411921 2.35016558,5.64968362 L1.64983442,6.35031638 C1.45278532,6.54745034 1.4457969,6.85994468 1.64434853,7.05841083 L7.65158532,13.0630617 Z" id="Shape" fill="#333333"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

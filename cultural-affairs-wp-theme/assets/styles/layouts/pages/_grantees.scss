@@ -1,0 +1,103 @@
+// General Grantees Styles
+.post-type-archive-grantee, .recent-grantees, .current-grantees {
+	.breadcrumbs {
+		background-color: $green-blue;
+	}
+	.wrap{
+		.main > .container {
+			padding: 0;
+		}
+		h1 {
+			color: $green-blue;
+		}
+		#grantee-list {
+			@media ( min-width: $screen-sm ) {
+				.grantee {
+					min-height: 560px;
+				}
+			}
+		}
+		.grantee-box {
+			position: relative;
+			margin-bottom: 20px;
+
+			h2 {
+				margin-top: 15px;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				@include transition(transform 4s ease);
+			}
+			a {
+				text-decoration: none;
+				&:hover {
+					color: $green-blue;
+					.short-description {
+						color: $grey;
+					}
+				}
+			}
+			.grantee-img {
+				overflow: hidden;
+				background-color: #000;
+				border: 1px solid $light-grey;
+			}
+			&:hover {
+				a {
+					color: $green-blue;
+				}
+				img {
+					opacity: .8;
+				}
+			}
+		}
+		@media ( min-width: $screen-sm ) {
+			.grantee-box {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+.grantees-footer {
+	background-color: $soft-grey;
+	margin-top: 20px;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding: 40px 0;
+	.item {
+		text-align: center;
+		padding: 30px;
+		&.grantee-box {
+			border: 1px solid $green-blue;
+			margin-bottom: 30px;
+			h2 {
+				color: $green-blue;
+				margin-top: 0px;
+			}
+		}
+		&.project-box {
+			border: 1px solid $blue;
+
+			h2 {
+				color: $blue;
+				margin-top: 0px;
+			}
+		}
+		.btn {
+			color: $dark-grey;
+
+			&:hover, &:active, &:focus {
+				color: #fff;
+			}
+		}
+	}
+	@media ( min-width: $screen-sm ) {
+		padding: 60px 0;
+		.item {
+			&.grantee-box {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}

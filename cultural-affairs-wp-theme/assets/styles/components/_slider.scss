@@ -1,0 +1,42 @@
+// Flexslider
+.flex-direction-nav {
+	a {
+		top: 140px;
+		margin-top: -45px;
+		&:before {
+			font-size: 35px;
+		}
+	}
+	@media ( min-width: $screen-sm ) {
+		a {
+			top: 50%;
+		}
+	}
+}
+.flex-control-thumbs {
+	li {
+		margin-right: 5px;
+		width: 80px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.flex-caption {
+	width: 100%;
+	padding: 15px;
+	left: 0;
+	bottom: -10px;
+	background: #000;
+	color: #fff;
+	@media ( min-width: $screen-sm ) {
+		position: absolute;
+		background: rgba(0,0,0,.5);
+	}
+}
+.slides {
+	li {
+		position: relative;
+	}
+}

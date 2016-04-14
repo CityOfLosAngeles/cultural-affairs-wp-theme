@@ -1,0 +1,376 @@
+// General Cultural Center Styles
+.single-council_district {
+	// General Styles
+	h3 {
+		margin-bottom: 0;
+		margin-top: 0px;
+	}
+	a {
+		color: $about;
+		&.btn {
+			color: $grey;
+			&:hover, &:active, &:focus {
+				color: #fff;
+			}
+		}
+	}
+	header {
+		&.navbar {
+			border-bottom: 1px solid $about;
+		}
+	}
+	.breadcrumbs {
+		background-color: $about;
+		color: #fff;
+		a {
+			color: #fff;
+		}
+	}
+	.wrap{
+		.main article > .container {
+			@media ( min-width: $screen-sm ) {
+				padding: 0;
+			}
+		}
+		h1 {
+			color: $about;
+		}
+	}
+	article {	
+		header {
+			h1 {
+				margin-top: 0;
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.wrap {
+		margin-top: 0;
+		// Hero Area
+		.hero-area {
+			margin-left: -15px;
+			margin-right: -15px;
+			height: 200px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			margin-bottom: 30px;
+			@media ( min-width: $screen-sm ) {
+				height: 400px;
+				margin-bottom: 0px;
+			}
+			@media ( min-width: $screen-md ) {
+				margin-bottom: 40px;
+			}
+		}
+		// Main Area
+		.main-area {
+			clear: left;
+			h1 {
+				margin-bottom: 0;
+				color: $grey;
+			}
+			h2 {
+				@extend h1;
+				color: $grey;
+			}
+			.btn {
+				margin-bottom: 20px;
+			}
+			.art-classes {
+				font-size: 12px;
+				padding: 2px 3px;
+				background-color: $soft-grey;
+				border: 1px solid $light-grey;
+				border-radius: 2px;
+				color: $greyish-brown;
+				margin-top: 5px;
+				display: inline-block;
+			}
+			.entry-content {
+				margin-top: 25px;
+				padding-bottom: 20px;
+			}
+			.sep {
+				margin: 15px;
+				clear: both;
+			}
+			// Grantee Boxes
+			.grantee-list {
+				margin-bottom: 15px;
+			}		
+			.grantee-box {
+				position: relative;
+				margin-bottom: 20px;
+				h2 {
+					margin-top: 15px;
+				}
+				img {
+					width: 100%;
+					height: auto;
+					@include transition(transform 4s ease);
+				}
+				a {
+					text-decoration: none;
+					color: $grey;
+
+					&:hover {
+						color: $about;
+
+						.short-description {
+							color: $grey;
+						}
+					}
+				}
+				.grantee-img {
+					overflow: hidden;
+					background-color: #000;
+					border: 1px solid $light-grey;
+				}
+				&:hover {
+					a, a h2 {
+						color: $about!important;
+					}
+					img {
+						opacity: .8;
+					}
+				}
+			}
+			// Cultural Center Boxes
+			.cultural-center-list {
+				@media ( min-width: $screen-sm ) {
+					.cultural-center {
+						min-height: 400px;
+					}
+				}
+			}
+			.cultural-center-box {
+				position: relative;
+				margin-bottom: 20px;
+				a {
+					text-decoration: none;
+					color: $grey;
+					h2 {
+						margin-bottom: 5px;
+						margin-top: 15px;
+					}		
+					.art-classes {
+						font-size: 12px;
+						padding: 2px 3px;
+						background-color: $soft-grey;
+						border: 1px solid $light-grey;
+						border-radius: 2px;
+						color: $greyish-brown;
+						margin-top: 5px;
+						display: inline-block;
+					}
+					.thumb-container {
+						height: 220px;
+						width: auto;
+						overflow: hidden;
+						position: relative;
+						border: 1px solid $light-grey;
+						img {
+							height: 100%;
+							width: auto;
+							max-width: inherit;
+							position: absolute;
+							left: 0;
+							margin-left: -50%;
+							@include transition(transform 4s ease);
+						}
+					}
+					&:hover, &:focus, &:active {
+						h2 {
+							color: $about;
+						}
+						.thumb-container {
+							background-color: #000;
+
+							img {
+								@include opacity(0.8);
+							}
+						}
+					}
+				}
+				@media ( min-width: $screen-sm ) {
+					margin-bottom: 30px;
+					a {
+						.thumb-container {
+							height: 165px;
+						}
+					}
+				}
+				@media ( min-width: $screen-md ) {
+					a {
+						.thumb-container {
+							height: 200px;
+						}
+					}
+				}
+			}
+			// Events
+			.events-title {
+				margin-bottom: 15px;
+			}
+			.tribe-events-list {
+				margin-bottom: 20px;
+				.type-tribe_events {
+					padding: 15px 0;
+					border-top: 1px solid $light-grey;
+					border-bottom: 1px solid $light-grey;
+					a {
+						color: $grey;
+						&:hover {
+							color: $about;
+						}
+					}
+					.tribe-events-list-event-title {
+						margin-top: 0;
+						a {
+							text-decoration: none;
+						}
+					}
+					.tribe-events-event-image {
+						float: none;
+						width: 100%;
+						margin: 0;
+						overflow: hidden;
+						margin-bottom: 15px;
+					}
+					img {
+						max-width: 100%;
+						@include transition(transform 4s ease);
+					}
+					&:hover {
+						.tribe-events-event-meta {
+							border-top: 3px solid $about;
+						}
+						a {
+							color: $about;
+						}
+						img {
+							@include opacity(0.8);
+						}
+					}
+				}
+				.event-extra-info {
+					& > div {
+						padding: 0;
+					}
+					@media ( min-width: $screen-md ) {
+						.meta-info {
+							padding-right: 30px;
+						}
+					}
+				}
+				.tribe-events-event-meta {
+					border: 0;
+					border-top: 3px solid $grey;
+					padding-top: 10px;
+					text-align: right;
+					font-size: 16px;
+					background-color: #fff;
+					padding-bottom: 10px;
+					margin-bottom: 0;
+					.tribe-events-venue-details {
+						border: 0;
+						margin: 0;
+						padding-top: 5px;
+						font-weight: 100;
+					}
+				}
+			}
+			// Artists Projects Boxes
+			.artists-project-list, .murals-project-list {
+				margin-bottom: 15px;
+			}		
+			.artists-project-box, .murals-project-box {
+				position: relative;
+				margin-bottom: 20px;
+
+				h2 {
+					margin-top: 15px;
+				}
+				img {
+					width: 100%;
+					height: auto;
+					@include transition(transform 4s ease);
+				}
+				a {
+					text-decoration: none;
+					color: $grey;
+
+					&:hover {
+						color: $about;
+
+						h2 {
+							color: $about;
+						}
+
+						.short-description {
+							color: $grey;
+						}
+					}
+				}
+				.artists-project-img, .murals-project-img {
+					overflow: hidden;
+					background-color: #000;
+					border: 1px solid $light-grey;
+				}
+				&:hover {
+					a {
+						color: $about;
+					}
+					img {
+						opacity: .8;
+					}
+				}
+			}
+			.tags-container {
+				.tag {
+					font-size: 12px;
+					color: $greyish-brown;
+					background-color: $soft-grey;
+					padding: 2px 3px;
+					border: 1px solid $light-grey;
+					float: left;
+					margin-right: 5px;
+				}
+			}
+		}
+		// Side Area
+		.general-info-area {
+			padding-bottom: 30px;
+			h1 {
+				margin-bottom: 15px;
+			}
+			.location {
+				margin-bottom: 30px;
+			}
+			.rep-area {
+				.rep-photo {
+					width: 80px;
+					height: auto;
+					border-radius: 50px;
+					margin-bottom: 10px;
+					margin-top: 10px;
+				}
+				h2 {
+					margin-top: 0;
+				}
+				strong {
+					display: block;
+				}
+				p {
+					font-style: italic;
+				}
+			}
+			@media ( min-width: $screen-sm ) {
+				float: right;
+				padding-top: 20px;
+				padding-bottom: 0;
+			}
+		}
+	}
+}

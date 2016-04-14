@@ -1,0 +1,198 @@
+html, body { height: 100%; margin: 0; padding: 0; }
+body {
+	font-family: 'SansPro',sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+}
+b, strong {
+	font-weight: 900;
+}
+a {
+	color: $grey;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'SansPro',sans-serif;
+	font-weight: 900;
+}
+h1 {
+	font-size: 25px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 16px;
+}
+h4, h5, h6 {
+	font-size: 12px;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.black-bg {
+	background-color: #000;
+}
+.soft-grey-bg {
+	background-color: $soft-grey;
+}
+.white-txt {
+	color: #fff;
+}
+.green-heading, .green-text {
+	color: $green-blue;
+}
+.breadcrumbs {
+	padding: 15px 0;
+	background-color: $grey;
+	color: #fff;
+	font-size: 12px;
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+// Headers
+.page, .archive, .single, .search {
+	.wrap{
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		@media ( min-width: $screen-sm ) {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
+}
+// FAQs
+// Panels
+.faq-list {
+	margin-top: 10px;
+	border-bottom: 1px solid #FCFCFC;
+}
+.panel {
+	border: 0;
+	margin: 0;
+	box-shadow: none;
+	.panel-heading {
+		padding: 0;
+		border: 1px solid $light-grey;
+		background: #FCFCFC;
+	}
+	.panel-title {
+		font-weight: 700;
+		a {
+			color: $grey;
+			padding: 14px 45px 14px 20px;
+			display: block;
+			position: relative;
+			background-color: #FCFCFC;
+			text-decoration: none;
+			.control-icon {
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				right: 20px;
+				top: 16px;
+				span {
+					background-color: $dark-grey;
+					width: 14px;
+					height: 2px;
+					position: absolute;
+					top: 50%;
+					margin-top: -1px;
+				}
+			}
+			&.collapsed {
+				background-color: #FCFCFC;
+				.control-icon {
+					span {
+						&.v {
+							top: 8px;
+							left: 0;
+							@include rotate(90deg);										
+						}											
+					}
+				}
+			}
+			&:hover {
+				color: #fff;
+				background-color: $dark-grey;
+				.control-icon {
+					span {
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.panel-collapse {
+		background-color: #fff;
+		.panel-body {
+			border: 0!important;
+		}
+	}
+}
+// Grids
+.loading-container {
+	height: 37px;
+}
+.loading-div {
+	text-align: center;
+	width: 100%;
+	padding-bottom: 15px;
+
+	.glyphicon.spinning {
+		@include animation(spin 1s infinite linear);
+	}
+}
+.more-nav {
+	text-align: center;
+	clear: both;
+}
+// Posts paginations
+.nav-links {
+	& > div {
+		a {
+			color: #999;
+			padding: 15px;
+			text-decoration: none;
+			border: 1px solid #ededed;
+			display: inline-block;
+			background-color: transparent;
+			font-size: 14px;
+
+			&:hover {
+				background-color: #000;
+				color: #fff;
+				text-decoration: none!important;
+			}
+		}
+	}
+	.nav-previous {
+		float: left;
+
+		span {
+			margin-right: 3px;
+		}
+	}
+	.nav-next {
+		float: right;
+
+		span {
+			margin-left: 3px;
+		}
+	}
+}
+// LA City nav bar
+body > #global_nav_la_4324422 {
+	//background: #ccc !important;
+}

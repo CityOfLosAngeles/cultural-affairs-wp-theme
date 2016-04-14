@@ -1,0 +1,86 @@
+// General Forms
+button, input, select, textarea {
+	padding: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+input[type=text] {
+	font-style: italic;
+	padding: 14px 0;
+}
+input[type=submit] {
+	padding: 12px 22px;
+	border: 1px solid #fff;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
+.form-control {
+  height: 51px;
+  border-radius: 0;
+  border-width: 0 0 1px 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-color: $dark-grey;
+}
+button[type=submit], input[type=submit] {
+  padding: 14px 22px;
+  border: 1px solid #fff;
+  font-weight: 700;
+  line-height: 21px;
+}
+// Search form
+.search-form {
+  @extend .form-inline;
+}
+.search-form label {
+  font-weight: normal;
+  @extend .form-group;
+}
+.search-form .search-field {
+  @extend .form-control;
+}
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-default;
+}
+// On-Off Switch
+.onoffswitch {
+  position: relative; width: 40px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  height: 14px; padding: 0; line-height: 14px;
+  border: 0px solid #FFFFFF; border-radius: 18px;
+  background-color: #EDEDED;
+}
+.onoffswitch-label:before {
+  content: "";
+  display: block; width: 18px; margin: 2px;
+  background: #CCCCCC;
+  position: absolute; top: -5px; bottom: 0;
+  right: 22px;
+  border-radius: 18px;
+  box-shadow: 0 2px 4px 0px #757575;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+  background-color: #53DBC0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+ border-color: #53DBC0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  right: 0px; 
+  background-color: #02C39A; 
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}

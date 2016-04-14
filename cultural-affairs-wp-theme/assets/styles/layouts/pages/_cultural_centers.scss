@@ -1,0 +1,166 @@
+// General Cultural Centers Styles
+.post-type-archive-cultural_center {
+	.breadcrumbs {
+		background-color: $green-blue;
+	}
+	.page-header {
+		@media ( min-width: $screen-sm ) {
+			margin-bottom: 45px;
+		}
+	}
+	.wrap{
+		h1 {
+			color: $green-blue;
+		}
+		// Cultural Center Filter
+		#cultural-center-filter {
+			margin-bottom: 15px;
+			& > span {
+				float: left;
+				padding-top: 15px;
+				display: none;
+			}
+			.filter-items {
+				display: inline-block;
+				width: 100%;
+				margin: 0;
+				padding-left: 0;
+				border-bottom: 2px solid $green-blue;
+				li {
+					font-weight: 700;
+					color: $green-blue;
+					list-style: none;
+					float: left;
+					padding: 15px 7.5px;
+					border-bottom: 3px solid #fff;
+					margin: 0;
+					font-size: 14px;
+					cursor: pointer;
+
+					&:hover, &:active, &:focus, &.active {
+						cursor: pointer;
+						border-color: $green-blue;
+					}
+				}
+			}
+			@media ( min-width: $screen-sm ) {
+				border-bottom: 2px solid $green-blue;
+				& > span {
+					display: block;
+				}
+				.filter-items {
+					float: left;
+					width: auto;
+					padding-left: 15px;
+					border: 0;
+
+					li {
+						padding: 15px;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+		#classes-filter {
+			float: right;
+			padding-top: 15px;
+			span {
+				color: $pinkish-grey;
+				float: left;
+
+				&.on {
+					color: $dark-grey;
+				}
+			}
+			.onoffswitch {
+				float: left;
+				margin-left: 10px;
+				margin-top: 4px;
+			}
+		}
+		// Cultural Center Grid
+		.loading-div {
+			display: none;
+		}
+		#cultural-center-list {
+			@media ( min-width: $screen-sm ) {
+				.cultural-center {
+					min-height: 350px;
+				}
+			}
+		}
+		.cultural-center-box {
+			position: relative;
+			margin-bottom: 20px;
+			a {
+				text-decoration: none;
+				h2 {
+					margin-bottom: 5px;
+					margin-top: 15px;
+				}		
+				.art-classes {
+					font-size: 12px;
+					padding: 2px 3px;
+					background-color: $soft-grey;
+					border: 1px solid $light-grey;
+					border-radius: 2px;
+					color: $greyish-brown;
+					margin-top: 5px;
+					display: inline-block;
+				}
+				.thumb-container {
+					position: relative;
+					border: 1px solid $light-grey;
+					img {
+						height: auto;
+						width: 100%;
+						max-width: inherit;
+						
+					}
+				}
+				&:hover, &:focus, &:active {
+					h2 {
+						color: $green-blue;
+					}
+					.thumb-container {
+						background-color: #000;
+
+						img {
+							@include opacity(0.8);
+						}
+					}
+				}
+			}
+		}
+		@media ( min-width: $screen-sm ) {
+			.cultural-center-box {
+				margin-bottom: 30px;
+				a {
+					.thumb-container {
+						/*height: 220px;*/
+						width: auto;
+						overflow: hidden;
+						height: 165px;
+						img {
+							height: 100%;
+							width: auto;
+							position: absolute;
+							left: 50%;
+							transform: translateX(-50%);
+							@include transition(transform 4s ease);
+						}
+					}
+				}
+			}
+		}
+		@media ( min-width: $screen-md ) {
+			.cultural-center-box {
+				a {
+					.thumb-container {
+						height: 200px;
+					}
+				}
+			}
+		}
+	}
+}

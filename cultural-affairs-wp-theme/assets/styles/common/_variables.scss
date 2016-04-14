@@ -1,0 +1,29 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #27ae60;
+$blue:					#7C8DDC;
+$pink:					#A45A7F;
+$grey: 					#333333;
+$warm-grey:				#999999;
+$soft-grey:				#f7f7f7;
+$light-grey:			#ededed;
+$dark-grey:				#211814;
+$greyish-brown:			#595959;
+$warning-red:			#D41F3C;
+// Green Blue changed to Orange per DCA's request
+$green-blue:			#db8b6b;
+$pinkish-grey:			#cccccc;
+
+// Changing breakpoint collapse
+$grid-float-breakpoint:	992px;
+
+//color per page
+$about:					$blue;
+$events:				$pink;
+$contact:				$grey;

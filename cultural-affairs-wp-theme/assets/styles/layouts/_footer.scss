@@ -1,0 +1,233 @@
+// Subscribe Section
+.subscribe-section {
+	margin-top: 50px;
+	padding: 30px 0;
+
+	h2 {
+		letter-spacing: 2px;
+		margin-top: 0;
+	}
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 20px;
+	}
+	small {
+		color: $warm-grey;
+		display: inline-block;
+		font-size: 12px;
+		padding-top: 14px;
+		text-decoration: underline;
+	}
+
+	//constant contact plugin
+	#constant-contact-signup-errors {
+		ul {
+			padding: 0;
+			list-style: none;
+
+			li {
+				line-height: 14px;
+
+				label {
+					margin-bottom: 0;
+					font-size: 12px;
+					font-weight: 300;
+					color: $warning-red;
+				}
+			}
+		}
+	}
+	.gform_wrapper {
+		.gfield {
+			display: inline-block;
+
+			.button {
+				padding: 14px 22px;
+			}
+		}
+	}
+	@media ( min-width: $screen-sm ) {
+		margin-top: 60px;
+	}
+}
+// Footer
+footer {
+	color: $greyish-brown;
+	background-color: #fff;
+
+	.footer-top {
+		padding: 20px 0 40px 0;
+
+		// General
+		h2, h3 {
+			margin-bottom: 15px;
+
+			&.contact-h {
+				margin-bottom: 8px;
+			}
+			&.small-h3 {
+				margin-top: 11px;
+				margin-bottom: 5px;
+			}
+		}
+		h4 {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+
+		// FAQs
+		.faqs-footer {
+			padding-bottom: 30px;
+
+			.faq-container {
+				border: 1px solid $light-grey;
+				margin-bottom: 17px;
+
+				a {
+					border-bottom: 1px solid $light-grey;
+					color: $greyish-brown;
+					display: block;
+					padding: 15px;
+					text-decoration: none;
+
+					&:last-child {
+						border-bottom: 0;
+					}
+					&:hover {
+						background-color: $dark-grey;
+						color: #fff;
+					}
+				}
+			}
+			.btn {
+				color: $grey;
+
+				&:hover, &:active, &:focus {
+					color: #fff;
+				}
+			}
+
+			@media ( min-width: $screen-md ) {
+				padding-bottom: 0;
+			}
+		}
+		// Quick Links
+		.quicklinks-footer {
+			.menu {
+				li {
+					margin-bottom: 5px;
+
+					a {
+						color: $greyish-brown;
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+		// Connect Section
+		.footer-social-icons {
+			padding-bottom: 10px;
+
+			a {
+				display: inline-block;
+
+				.fb, .tw, .itg {
+					border-radius: 50px;
+					border: 1px solid $light-grey;
+					display: inline-block;
+					height: 48px;
+					margin-right: 5px;
+					position: relative;
+					width: 48px;
+
+					svg {
+						left: 50%;
+						margin-top: -8px;
+						position: absolute;
+						top: 50%;
+					}
+				}
+				.fb {
+					svg {
+						margin-left: -3.7px;
+					}
+				}
+				.tw {
+					svg {
+						margin-top: -6.5px;
+						margin-left: -8px;
+					}
+				}
+				.itg {
+					svg {
+						margin-left: -8px;
+					}
+				}
+
+				&:hover, &:active, &:focus {
+					// Hover styles here
+					div {
+						background-color: #000;
+						border-color: #000;
+						svg g {
+							fill: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-footer-menu-container {
+		ul {
+			padding-left: 0px;
+			list-style: none;
+		}
+	}
+	.footer-copyright {
+		border-top: 1px solid #ededed;
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		small {
+			font-size: 12px;
+			font-style: italic;
+			display: block;
+
+			a {
+				color: $greyish-brown;
+			}
+		}
+	}
+	.back-top {
+		a {
+			display: inline-block;
+			.back-top-arrow {
+				width: 48px;
+				height: 48px;
+				border: 1px solid $light-grey;
+				position: relative;
+
+				svg {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin-left: -6px;
+					margin-top: -6px;
+				}
+			}
+			&:hover {
+				background-color: #000;
+
+				.back-top-arrow {
+					svg g {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+}

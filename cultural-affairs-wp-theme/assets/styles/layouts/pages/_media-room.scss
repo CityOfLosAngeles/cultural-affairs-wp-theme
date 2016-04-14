@@ -1,0 +1,121 @@
+.media-room {
+	.wrap{
+		margin-top: 0;
+		h1, h2, h3, h4, h5, h6 {
+			color: $blue;
+			margin-top: 0px;
+		}
+		.main > .container {
+			padding-top: 30px;
+			@media ( max-width: $screen-sm ) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			@media ( min-width: $screen-md ) {
+				padding-top: 60px;
+			}
+		}
+		a:not(.btn) {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		// Hero Area
+		.hero-area {
+			margin-left: -15px;
+			margin-right: -15px;
+			height: 200px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@media ( min-width: $screen-sm ) {
+				height: 400px;
+			}
+		}
+		.press-releases {
+			padding-top: 30px;
+			padding-bottom: 60px;
+		}
+		.left-blue-border {
+			border-left: 2px solid $blue;
+			padding-left: 10px;
+			margin-bottom: 30px;
+		}
+		.media-box {
+			padding-bottom: 5px;
+			&:last-child {
+				padding-bottom: 0px;
+			}
+		}
+	}
+	header {
+		&.navbar {
+			border-bottom: 1px solid $blue;
+		}
+	}
+	.breadcrumbs {
+		background-color: $blue;
+		color: #fff;
+		a {
+			color: #fff;
+		}
+	}
+}
+.tax-media-room-categories {
+	header {
+		&.navbar {
+			border-bottom: 1px solid $blue;
+		}
+	}
+	.breadcrumbs {
+		background-color: $blue;
+		color: #fff;
+		a {
+			color: #fff;
+		}
+	}
+	.wrap{
+		h1, h2, h3, h4, h5, h6 {
+			color: $blue;
+			margin-top: 0px;
+		}
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.left-blue-border {
+			border-left: 2px solid $blue;
+			padding-left: 10px;
+			margin-bottom: 30px;
+		}
+	}
+}
+.media-room, .tax-media-room-categories {
+	.side-area {
+		margin-top: 30px;
+		.more-info-heading {
+			color: $dark-grey;
+		}
+		.more-info {
+			img {
+				max-width: 80px;
+				border-radius: 50px;
+				margin: 10px 0;
+			}
+			.text-container {
+				i {
+					font-size: 12px;
+					font-weight: 900;
+					margin-bottom: 10px;
+					display: inline-block;
+				}
+			}
+		}
+		@media ( min-width: $screen-md ) {
+			margin-top: 0;
+		}
+	}
+}

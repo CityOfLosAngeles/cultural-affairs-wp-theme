@@ -1,0 +1,182 @@
+// General Grants Styles
+.post-type-archive-grant_and_call{
+	.breadcrumbs {
+		background-color: $green-blue;
+	}
+	.top-spacing {
+		padding-top: 30px;
+		@media ( min-width: $screen-sm ) {
+			padding-top: 60px;
+		}
+	}
+	.bottom-spacing {
+		padding-bottom: 30px;
+
+		@media ( min-width: $screen-md ) {
+			padding-bottom: 60px;
+		}
+	}
+	.wrap{
+		h1 {
+			color: $green-blue;
+		}
+		.main .container.tight {
+			@media ( max-width: $screen-sm ) {
+				padding: 0;
+			}
+		}
+		.grant-row {
+			border-bottom: 1px solid $light-grey;
+			padding: 15px 0px;
+			&:first-child {
+				border-bottom: 1px solid $grey;
+				h3 {
+					margin-top: 0px;
+					margin-bottom: 0px;
+				}
+			}
+			a {
+				color: $green-blue;
+				text-decoration: none;
+				&:hover, &:active, &:focus {
+					text-decoration: underline;
+				}
+				&.btn {
+					color: $grey;
+					&:hover, &:active, &:focus {
+						color: #fff;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		.elegibility {
+			display: inline-block;
+			background-color: $green-blue;
+			color: #fff;
+			font-size: 12px;
+			padding: 3px 10px;
+    		border-radius: 25px;
+		}
+		.side-item {
+			border-left: 1px solid $green-blue;
+			padding-left: 15px;
+		}
+		.recent-grants, .featured-grantees {
+			h1 {
+				margin-top: 0;
+			}
+		}
+		.recent-grants {
+			.internal-border {
+				border: 1px solid $green-blue;
+				padding: 30px;
+			}
+			div[class*="col-"] {
+				padding-bottom: 30px;
+			}
+		}
+		.grantees-boxes {
+			padding-top: 30px;
+			@media ( min-width: $screen-sm ) {
+				.grantee {
+					min-height: 560px;
+				}
+			}
+			.grantee-box {
+				margin-bottom: 30px;
+				h2 {
+					margin-top: 15px;
+					a {
+						color: $dark-grey;
+						text-decoration: none;
+
+						&:hover, &:active, &:focus {
+							color: $green-blue;
+						}
+					}
+				}
+				a {
+					color: $grey;
+					text-decoration: none;
+					&:hover, &:active, &:focus {
+						color: $green-blue;
+						.short-description {
+							color: $grey;
+						}
+					}
+					&.btn {
+						color: $grey;
+						&:hover, &:active, &:focus {
+							color: #fff;
+							text-decoration: none;
+						}
+
+					}
+				}
+				img {
+					@include transition(transform 4s ease);
+				}
+				.grantee-img {
+					overflow: hidden;
+					background-color: #000;
+					border: 1px solid $light-grey;
+				}
+				&:hover, &:active, &:focus {
+					h2 {
+						a {
+							color: $green-blue;
+						}
+					}
+					img {
+						opacity: .8;
+					}
+				}
+			}
+		}
+		.sep {
+			margin-top: 0;
+		}
+	}
+	.more-nav {
+		margin-top: 30px;
+	}
+	// Cultural Center Grid
+	.loading-div {
+		display: none;
+	}
+}
+.grants-footer {
+	background-color: $soft-grey;
+	margin-top: 20px;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding: 40px 0;
+	.intro {
+		margin-bottom: 40px;
+	}
+	.row {
+		margin: 0;
+	}
+	.item {
+		padding-bottom: 30px;
+		h2 {
+			margin-top: 10px;
+		}
+		a {
+			text-decoration: none;
+			&:hover, &:active, &:focus {
+				color: $green-blue;
+			}
+		}
+	}
+	@media ( min-width: $screen-md ) {
+		padding: 60px 0;
+		h1 {
+			margin-top: 0px;
+		}
+		.item {
+			padding-bottom: 0;
+		}
+	}
+}

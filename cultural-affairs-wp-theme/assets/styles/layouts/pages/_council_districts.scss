@@ -1,0 +1,80 @@
+// General Council Districts Styles
+.post-type-archive-council_district {
+	.breadcrumbs {
+		background-color: $blue;
+	}
+	.page-header {
+		@media ( min-width: $screen-sm ) {
+			margin-bottom: 45px;
+		}
+	}
+	.wrap{
+		h1 {
+			color: $blue;
+		}
+		// Cultural Center Grid
+		.loading-div {
+			display: none;
+		}
+		#council-district-list {
+			@media ( min-width: $screen-sm ) {
+				.district {
+					min-height: 440px;				
+				}
+			}
+		}
+		.district-box {
+			position: relative;
+			margin-bottom: 20px;
+			a {
+				text-decoration: none;
+				h2 {
+					margin-bottom: 5px;
+					margin-top: 15px;
+				}
+				.district-img {
+					width: auto;
+					overflow: hidden;
+					position: relative;
+					img {
+						max-height: 250px;
+						max-width: 100%;
+						height: auto;
+						@include transition(transform 4s ease);
+					}
+				}
+				&:hover, &:focus, &:active {
+					h2 {
+						color: $blue;
+					}
+					.district-img {
+						background-color: #000;
+
+						img {
+							@include opacity(0.8);
+						}
+					}
+				}
+			}
+		}
+		@media ( min-width: $screen-sm ) {
+			.district-box {
+				margin-bottom: 30px;
+
+				a {
+					.district-img {
+					}
+				}
+			}
+		}
+		@media ( min-width: $screen-md ) {
+			.district-box {
+
+				a {
+					.district-img {
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+.post-type-archive-program_initiative {
+	.breadcrumbs {
+		background-color: $green-blue;
+	}
+	.wrap{
+		h1 {
+			color: $green-blue;
+			&.entry-title {
+				margin-bottom: 30px;
+			}
+		}
+		a {
+			text-decoration: none;
+		}
+		#program-list {
+			@media ( min-width: $screen-sm ) {
+				.program {
+					min-height: 520px;
+				}
+			}
+		}
+		.program-initiative-box {
+			a {
+				text-decoration: none;
+				&:hover, &:active, &:focus {
+					color: $green-blue;
+				}
+				&.btn {
+					color: $grey;
+					margin-bottom: 30px;
+					
+					&:hover, &:active, &:focus {
+						color: #fff;
+						text-decoration: none;
+					}
+				}
+			}
+			.program-initiative-img {
+				overflow: hidden;
+				background-color: #000;
+				border: 1px solid $light-grey;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				@include transition(transform 4s ease);
+			}
+			&:hover {
+				a {
+					color: $green-blue;
+					&.btn {
+						color: #fff;
+						background-color: #000;
+						border-color: #000;
+					}
+				}
+				img {
+					opacity: .8;
+				}
+			}
+		}
+		.short-description {
+			margin-bottom: 15px;
+		}
+	}
+}

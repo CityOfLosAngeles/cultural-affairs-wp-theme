@@ -1,0 +1,251 @@
+.about {
+	.wrap{
+		h1, h2, h3, h4, h5, h6 {
+			color: $blue;
+			margin-top: 0px;
+		}
+		.container {
+			padding: 0;
+		}
+		.left-blue-border {
+			border-left: 2px solid $blue;
+			padding-left: 10px;
+			margin-bottom: 30px;
+		}
+	}
+	header {
+		&.navbar {
+			border-bottom: 1px solid $blue;
+		}
+	}
+	.top-spacing {
+		padding-top: 30px;
+		@media ( min-width: $screen-sm ) {
+			padding-top: 60px;
+		}
+	}
+	.bottom-spacing {
+		padding-bottom: 30px;
+		@media ( min-width: $screen-md ) {
+			padding-bottom: 60px;
+		}
+	}
+	.breadcrumbs {
+		background-color: $blue;
+		color: #fff;
+		a {
+			color: #fff;
+		}
+	}
+	.soft-grey-bg {
+		h2 {
+			color: $grey;
+		}
+	}
+	.top-section {
+		margin-bottom: 25px;
+	}
+	.middle-banner {
+		background-size: cover;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		.container {
+			padding: 0 15px;
+		}
+		a {
+			text-decoration: none;
+		}
+		@media ( min-width: $screen-sm ) {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+		@media ( min-width: $screen-md ) {
+			padding-top: 140px;
+			padding-bottom: 140px;
+		}
+	}
+	.media-section {
+		margin-top: 30px;
+		@media ( min-width: $screen-md ) {
+			margin-top: 0;
+		}
+	}
+	// Quotes
+	.individual-quotes {
+		margin-top: 25px;
+		padding-left: 15px;
+		border-left: 2px solid $blue;
+		margin-bottom: 20px;
+		float: left;
+		margin-right: 2%;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+		h3 {
+			color: $dark-grey;
+			margin-top: 0px;
+			margin-bottom: 10px;
+		}
+		h4 {
+			color: $dark-grey;
+		}
+		p {
+			font-style: italic;
+		}
+		.img-quote {
+			margin-bottom: 10px;
+			max-width: 80px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		@media ( min-width: $screen-md ) {
+			width: 100%;
+			float: none;
+			margin-right: 0;
+			margin-top: 0;
+		}
+	}
+	// Bottom Section
+	.bottom-section {
+		margin-top: 60px;
+		.individual-quotes {
+			width: 100%;
+			float: none;
+			margin-right: 0;
+		}
+		.left-container {
+			margin-bottom: 0;
+			@media ( min-width: $screen-md ) {
+				margin-bottom: 60px;
+			}
+		}
+		.right-container {
+			margin-bottom: 30px;
+			@media ( min-width: $screen-md ) {
+				margin-bottom: 60px;
+			}
+		}
+	}
+	// Discover Neighborhood
+	.discover-neighborhood {
+		.icon {
+			max-width: 120px;
+			height: auto;
+			padding-bottom: 20px;
+		}
+		.form-zip {
+			padding-top: 20px;
+			form {
+				input {
+					padding-left: 25px;
+					outline: none!important;
+					box-shadow: none!important;
+				}
+				button[type=submit] {
+					background-color: $dark-grey;
+					color: #fff;
+					border: 1px solid $dark-grey;
+					&:hover {
+						background-color: transparent;
+						color: #211814;
+					}
+				}
+				.location-icon {
+					width: 12px;
+					height: 15px;
+					background: url(../images/about/location-icon.png) no-repeat center;
+					background-size: contain;
+					position: absolute;
+					left: 0;
+					top: 18px;
+				}
+			}
+		}
+	}
+	// Carousel
+	.carousel {
+		margin-bottom: 30px;
+		#item-image {
+			width: 100%;
+			min-height: 400px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		.carousel-caption {
+			padding: 19px;
+		}
+		.carousel-caption-bg {
+			background-color: rgba(0,0,0,0.7);
+			height: 48px;
+			padding: 0;
+			position: absolute;
+			left: 50%;
+			margin-left: -145px;
+			bottom: 0;
+			z-index: 10;
+			color: #fff;
+			text-align: center;
+			line-height: 48px;
+			width: 290px;
+			@media ( min-width: $screen-sm ) {
+				width: 360px;
+				margin-left: -180px;
+			}
+		}
+		.caption-nav {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			bottom: 70px;
+			@media ( min-width: $screen-sm ) {
+				width: 460px;
+				bottom: 20px;
+			}
+		}
+		.carousel-control {
+			top: initial;
+			bottom: -50px;
+			left: 50%;
+			z-index: 11;
+			background-image: none;
+			background-color: rgba(0,0,0,0.7);
+			padding: 24px;
+			width: 144px;
+			opacity: 1;
+			margin-left: -145px;
+			&.right {
+				left: 50%;
+				margin-left: 1px;
+			}
+			.glyphicon-chevron-left {
+				margin-left: -7.5px;
+			}
+			.glyphicon-chevron-right {
+				margin-right: -7.5px;
+			}
+			.glyphicon {
+				width: 15px;
+				height: 15px;
+				font-size: 15px;
+				margin-top: -7.5px;
+			}
+			&:hover {
+				background-color: rgba(255,255,255,0.7);
+				color: #000;
+			}
+			@media ( min-width: $screen-sm ) {
+				bottom: 0;
+				left: 0;
+				width: 48px;
+				margin-left: 0;
+				&.right {
+					right: 0;
+					margin: 0;
+					left: auto;
+				}
+			}
+		}
+	}
+}

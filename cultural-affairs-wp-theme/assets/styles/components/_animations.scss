@@ -1,0 +1,17 @@
+// Animations
+
+// Opacity Animations
+@include keyframes(maxOpacity) { 
+	from {@include opacity(0);}
+	to {@include opacity(1);}
+}
+@include keyframes(minOpacity) { 
+	from {@include opacity(1);}
+	to {@include opacity(0);}
+}
+
+// Spin for loading
+@include keyframes(spin) {
+    from { @include rotate(0deg);}
+    to { @include rotate(360deg);}
+}

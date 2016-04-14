@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="17px" viewBox="0 0 8 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD/Homepage" sketch:type="MSArtboardGroup" transform="translate(-1047.000000, -2118.000000)" fill="#595959">
+            <g id="Desktop-HD/Footer" sketch:type="MSLayerGroup" transform="translate(0.000000, 1800.000000)">
+                <g id="container-1" transform="translate(150.000000, 262.000000)" sketch:type="MSShapeGroup">
+                    <g id="connect" transform="translate(877.000000, 0.000000)">
+                        <g id="list" transform="translate(0.000000, 40.120846)">
+                            <g id="bt-facebook">
+                                <g id="icon-16x16-facebook" transform="translate(16.000000, 16.048338)">
+                                    <path d="M11.7173256,5.19652571 L9.18534465,5.19652571 L9.18534465,3.5309002 C9.18534465,2.90537709 9.59867522,2.75954351 9.88979507,2.75954351 L11.6765887,2.75954351 L11.6765887,0.00963365375 L9.21581453,0 C6.48412337,0 5.86247154,2.05097166 5.86247154,3.36347394 L5.86247154,5.19652571 L4.28267439,5.19652571 L4.28267439,8.03014869 L5.86247154,8.03014869 L5.86247154,16.0483384 L9.18534465,16.0483384 L9.18534465,8.03014869 L11.4275305,8.03014869 L11.7173256,5.19652571 L11.7173256,5.19652571 Z" id="icon-facebook"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -5,7 +5,7 @@ Project coordinator: Wendy Hsu wendy.hsu@lacity.org
 Technical lead: Daniel Garcia daniel@klugeinteractive.com 
 
 ## Who is this for?
-Arts agencies in the government or nonprofit sector can benefit from this open source project. Arts or cultural organizations that don’t currently have technical staff or a content management system can leverage this theme as an entry point into Wordpress, a robust and open source web authoring system. It enables non-technical staff to make content updates. 
+Government and nonprofit arts agencies can benefit from this open source project. Organizations that don’t currently have technical staff or a content management system can leverage this theme as an entree into Wordpress, a robust and open source web authoring system. It enables non-technical staff to make content updates. 
 This theme is ready for use for municipal agencies in large or medium-sized cities or state-level arts agencies with events, facilities, venues, cultural sites, and programming in grants, public art, and arts education. Smaller nonprofit arts agencies may adapt and modify the theme based on the scope and form of their programming needs.
 
 ## Goals

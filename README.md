@@ -9,7 +9,7 @@ Arts agencies in the government or nonprofit sector can benefit from this open s
 This theme is ready for use for municipal agencies in large or medium-sized cities or state-level arts agencies with events, facilities, venues, cultural sites, and programming in grants, public art, and arts education. Smaller nonprofit arts agencies may adapt and modify the theme based on the scope and form of their programming needs.
 
 ## Goals
-We believe that this code contribution advances our agency’s public mission, a commitment to building public-serving information infrastructures that support arts and culture. By releasing our web template code, we hope to empower arts agencies to adopt and develop digital platforms in order to serve communities, contributing to the greater knowledge commons related to arts and culture in Los Angeles and beyond. A Wordpress project, our web work also contributes to the global community committed to sharing and developing open source webmaking tools. 
+We believe that this code contribution advances our agency’s public mission, a commitment to building public-serving information infrastructures that support arts and culture. By releasing our web template code, we hope to empower arts agencies to adopt and develop digital platforms in order to better serve communities, contributing to the greater knowledge commons related to arts and culture in Los Angeles and beyond. A Wordpress project, our web work also contributes to the global community committed to sharing and developing open source webmaking tools. 
 We expect to continue our development of this theme code with plans to support digital service delivery to be designed in the near future. Contact us if you would like to learn about our development plans.
 
 ## Licensing

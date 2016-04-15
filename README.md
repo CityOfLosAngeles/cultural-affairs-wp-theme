@@ -1,5 +1,5 @@
 ## Overview
-This repository contains the front-end theme code for the City of Los Angeles Department of Cultural Affairs’ website, http://culturela.org. The theme code is developed for the Wordpress platform. This project is the result of a partnership between Department of Cultural Affairs and contractor Kluge Interactive, http://klugeinteractive.com. Members of the Department and Kluge teamed up to design a template for the agency to provide the agency’s programming, facility and events information.
+This repository contains the theme code for the City of Los Angeles Department of Cultural Affairs’ website, http://culturela.org. This frontend theme code is developed for the Wordpress platform. This project is the result of a partnership between Department of Cultural Affairs and contractor Kluge Interactive, http://klugeinteractive.com. Members of the Department and Kluge teamed up to design a template for the agency to provide the agency’s programming, facility and events information.
 This template code is a public, stable version. It can be downloaded as a zip to be installed in Wordpress. We encourage developers to use modify, merge, publish, distribute this code. Questions? Contact our team:
 Project coordinator: Wendy Hsu wendy.hsu@lacity.org
 Technical lead: Daniel Garcia daniel@klugeinteractive.com 
@@ -9,7 +9,7 @@ Arts agencies in the government or nonprofit sector can benefit from this open s
 This theme is ready for use for municipal agencies in large or medium-sized cities or state-level arts agencies with events, facilities, venues, cultural sites, and programming in grants, public art, and arts education. Smaller nonprofit arts agencies may adapt and modify the theme based on the scope and form of their programming needs.
 
 ## Goals
-We believe that this code contribution advances our agency’s public mission, a commitment to building public-serving information infrastructures that support arts and culture. By releasing our web template source code, we hope to empower arts agencies to adopt and develop digital platforms in order to serve communities, contributing to the greater knowledge commons related to arts and culture. A Wordpress project, our web work also contributes to the global community committed to sharing and developing open source webmaking tools. 
+We believe that this code contribution advances our agency’s public mission, a commitment to building public-serving information infrastructures that support arts and culture. By releasing our web template code, we hope to empower arts agencies to adopt and develop digital platforms in order to serve communities, contributing to the greater knowledge commons related to arts and culture in Los Angeles and beyond. A Wordpress project, our web work also contributes to the global community committed to sharing and developing open source webmaking tools. 
 We expect to continue our development of this theme code with plans to support digital service delivery to be designed in the near future. Contact us if you would like to learn about our development plans.
 
 ## Licensing

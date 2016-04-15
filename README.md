@@ -1,16 +1,16 @@
 ## Overview
 This repository contains the front-end theme code for the City of Los Angeles Department of Cultural Affairs’ website, http://culturela.org. The theme code is developed for the Wordpress platform. This project is the result of a partnership between Department of Cultural Affairs and contractor Kluge Interactive, http://klugeinteractive.com. Members of the Department and Kluge teamed up to design a template for the agency to provide the agency’s programming, facility and events information.
-This template code is a public, stable version. It can be downloaded as a zip to be installed in Wordpress. We encourage developers to use modify, merge, publish, distribute this code. If you have questions about the team:
+This template code is a public, stable version. It can be downloaded as a zip to be installed in Wordpress. We encourage developers to use modify, merge, publish, distribute this code. Questions? Contact our team:
 Project coordinator: Wendy Hsu wendy.hsu@lacity.org
 Technical lead: Daniel Garcia daniel@klugeinteractive.com 
 
 ## Who is this for?
-We expect that arts agencies in the government or nonprofit sector to be able to benefit from this open source project. Arts or cultural organizations that don’t currently have a content management system can leverage this theme as an entry point into Wordpress, a robust and open source web authoring system that allows for non-technical staff to make content updates.
-This theme is ready for use for municipal agencies in large or medium-sized cities or state-level arts agencies with events, facilities, venues, cultural sites, and programming in grants, public art, and arts education. Nonprofit arts agencies may adapt and modify the theme based on the scope and form of their programming needs.
+Arts agencies in the government or nonprofit sector can benefit from this open source project. Arts or cultural organizations that don’t currently have technical staff or a content management system can leverage this theme as an entry point into Wordpress, a robust and open source web authoring system. It enables non-technical staff to make content updates. 
+This theme is ready for use for municipal agencies in large or medium-sized cities or state-level arts agencies with events, facilities, venues, cultural sites, and programming in grants, public art, and arts education. Smaller nonprofit arts agencies may adapt and modify the theme based on the scope and form of their programming needs.
 
 ## Goals
-We believe that this code contribution advances our agency’s public mission, a commitment to build public-serving informational infrastructures that support arts and culture. By releasing the source code of our website template, we hope to empower arts agencies to adopt and develop digital platforms as a tool to serve communities, closing the knowledge gap regarding arts and cultural resources. A Wordpress project, our web development also contributes to the global community committed to sharing and developing open source webmaking tools. 
-We expect to continue our development of this theme code with plans to support digital service delivery to be designed in the future. Contact us if you would like to learn about our development plans.
+We believe that this code contribution advances our agency’s public mission, a commitment to building public-serving information infrastructures that support arts and culture. By releasing our web template source code, we hope to empower arts agencies to adopt and develop digital platforms in order to serve communities, contributing to the greater knowledge commons related to arts and culture. A Wordpress project, our web work also contributes to the global community committed to sharing and developing open source webmaking tools. 
+We expect to continue our development of this theme code with plans to support digital service delivery to be designed in the near future. Contact us if you would like to learn about our development plans.
 
 ## Licensing
 We have licensed this Wordpress theme code under the MIT open source license. The Department of Cultural Affairs retains the copyright of the code contained in this repository. 

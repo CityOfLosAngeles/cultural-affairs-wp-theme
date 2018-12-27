@@ -2,12 +2,16 @@
 .search {
 	.wrap{
 		h1, h2, h3, h4, h5, h6 {
-			color: $blue;
+			color: $grey;
 			margin-top: 0px;
 		}
 		.container {
 			padding: 0;
 		}
+	}
+	img {
+		max-width: 100%;
+    	height: auto;
 	}
 	header {
 		&.navbar {
@@ -28,7 +32,7 @@
 		}
 	}
 	.breadcrumbs {
-		background-color: $blue;
+		background-color: $grey;
 		color: #fff;
 		a {
 			color: #fff;
@@ -37,42 +41,47 @@
 	.page-header {
 		margin-bottom: 30px;
 	}
+
 	// Message area
 	.message-area {
 		border-top: 1px solid $light-grey;
 		padding-top: 15px;
 	}
+
 	// Search form	
 	.form-zip {
 		max-width: 100%;
 		padding-bottom: 15px;
-		form {
-			input {
-				padding-left: 25px;
-				outline: none!important;
-				box-shadow: none!important;
-				height: 46px;
-			}
-			button[type=submit] {
-				background-color: $dark-grey;
-				color: #fff;
-				border: 1px solid $dark-grey;
-				padding: 11.5px 22px;
-				&:hover {
-					background-color: transparent;
-					color: #211814;
+
+	    form {
+	    	input {
+		    	padding-left: 25px;
+		    	outline: none!important;
+		    	box-shadow: none!important;
+		    	height: 46px;
+		    }
+		    button[type=submit] {
+			    background-color: $dark-grey;
+			    color: #fff;
+			    border: 1px solid $dark-grey;
+			    padding: 11.5px 22px;
+
+			    &:hover {
+				    background-color: transparent;
+				    color: #211814;
 				}
 			}
-			.location-icon {
-				width: 12px;
-				height: 15px;
-				background: url(../images/about/location-icon.png) no-repeat center;
-				background-size: contain;
-				position: absolute;
-				left: 0;
-				top: 18px;
+		    .location-icon {
+			    width: 12px;
+			    height: 15px;
+			    background: url(../images/about/location-icon.png) no-repeat center;
+			    background-size: contain;
+			    position: absolute;
+			    left: 0;
+			    top: 18px;
 			}
 		}
+
 		@media ( min-width: $screen-sm ) {
 			padding-right: 15px;
 			padding-bottom: 0;
@@ -80,6 +89,7 @@
 			max-width: 360px;
 		}
 	}
+
 	// View all button
 	.view-all-container {
 		hr {
@@ -88,6 +98,7 @@
 	}
 	.view-all {
 		display: block;
+
 		@media ( min-width: $screen-sm ) {
 			display: inline-block;
 		}
@@ -96,11 +107,14 @@
 	.result-list {
 		display: inline-block;
 		margin-bottom: 15px;
+
 		.district-box {
 			position: relative;
 			margin-bottom: 20px;
+
 			a {
 				text-decoration: none;
+
 				h2 {
 					margin-bottom: 5px;
 					margin-top: 15px;
@@ -109,11 +123,15 @@
 					width: auto;
 					overflow: hidden;
 					position: relative;
+
 					img {
 						max-height: 250px;
+						max-width: 100%;
+    					height: auto;
 						@include transition(transform 4s ease);
 					}
 				}
+
 				&:hover, &:focus, &:active {
 					h2 {
 						color: $blue;
@@ -130,8 +148,10 @@
 		}
 		@media ( min-width: $screen-sm ) {
 			padding-top: 30px;
+			
 			.district-box {
 				margin-bottom: 30px;
+
 				a {
 					.district-img {
 					}
@@ -140,6 +160,7 @@
 		}
 		@media ( min-width: $screen-md ) {
 			.district-box {
+
 				a {
 					.district-img {
 					}

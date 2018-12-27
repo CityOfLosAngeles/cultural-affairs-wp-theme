@@ -9,6 +9,10 @@
 			color: $warm-grey;
 		}
 	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 	header {
 		&.navbar {
 			border-bottom: 1px solid $gray;
@@ -25,14 +29,17 @@
 			color: $grey;
 		}
 	}
+
 	.contact-phone, .contact-email {
 		color: $warm-grey;
 	}
+
 	.single-division {
 		background-color: #fcfcfc;
 		border: 1px solid $light-grey;
 		margin-bottom: 10px;
 		padding: 15px 30px;
+
 		h2 {
 			margin-top: 0;
 			margin-bottom: 5px;
@@ -41,6 +48,7 @@
 			margin-bottom: 0px;
 		}
 	}
+
 	.single-contact-page {
 		h1 {
 			margin-top: 0px;
@@ -52,11 +60,14 @@
 		.division-team {
 			border-left: 2px solid $warm-grey;
 			margin-top: 30px;
+
 			.team-member {
 				margin-bottom: 30px;
+
 				.member-pic {
 					margin-left: 25px;
 					margin-bottom: 15px;
+
 					img {
 						max-width: 120px;
 					}
@@ -65,6 +76,7 @@
 					overflow: hidden;
 					margin-left: 25px;
 				}
+
 				.bio-member {
 					margin-bottom: 0;
 					margin-top: 5px;
@@ -106,6 +118,7 @@
 		}
 	}
 }
+
 .post-type-archive-contact-division {
 	.page-header {
 		margin-bottom: 30px;
@@ -120,11 +133,13 @@
 		}
 	}
 }
+
 .single-contact-division {
 	.page-header {
 		display: none;
 	}
 }
+
 // DCA Staff Listing page
 .dca-staff-listing {
 	.main {
@@ -146,6 +161,7 @@
 			padding-bottom: 20px;
 			text-align: center;
 		}
+
 		@media ( min-width: $screen-sm ) {		
 			div[class^="col"] {
 				text-align: left;
@@ -154,6 +170,7 @@
 				margin-right: 20px;
 			}
 		}
+
 		@media ( min-width: $screen-md ) {
 			hr {
 				margin: 60px 0;
@@ -161,6 +178,58 @@
 			.staff-container {
 				max-width: 900px;
 				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.post-type-archive-contact-division {
+	.wpcf7-form {
+		input, textarea, select {
+			width: 100%;
+			border: 1px solid #000;
+			@media ( min-width: $screen-md ) {
+				width: 60%;
+			}
+		}
+		select {
+			border-radius: 0;
+			-webkit-appearance: none;
+			
+		}
+		span.message-about:after {
+			content: '';
+		    border: 7px solid transparent;
+			border-top: 7px solid #000;
+			margin-left: -23px;
+			margin-bottom: 11px;
+		    display: inline-block;
+		    vertical-align: bottom;
+		}
+		label {
+			letter-spacing: 2px;
+			font-size: 20px;
+			 small {
+				font-size: 50%;
+				vertical-align: top;
+			}
+		}
+		input.wpcf7-submit {
+			width: initial;
+		}
+	}
+	.ctct-form.ctct-form-21126 {
+		input, textarea {
+			width: 100%;
+			border: 1px solid #000;
+		}
+		label {
+			letter-spacing: 2px;
+			font-size: 20px;
+		}
+		.ctct-form-field-submit {
+			input[type="submit"] {
+				width: inherit;
 			}
 		}
 	}

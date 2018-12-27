@@ -9,20 +9,19 @@
 	        <tbody>
 	            <tr>
 	                <td><a href="/" title="Home">Home</a></td>
-	                <td><a href="/about" title="About">About</a></td>
-	                <td><a href="#" title="Artists Projects">Artists Projects</a></td>
-	                <td><a href="#" title="City Art Collection">City Art Collection</a></td>
+	                <td><a href="/city-art-collection" title="City Art Collection">City Art Collection</a></td>
+	                <td><a href="/cultural-centers" title="Cultural Centers">Cultural Centers</a></td>
+	                <td><a href="/grants-and-calls" title="Grants & Calls">Grants & Calls</a></td>
 	            </tr>
 	            <tr>
 	                <td><a href="/contact" title="Contact">Contact</a></td>
-	                <td><a href="#" title="Cultural Centers">Cultural Centers</a></td>
 	                <td><a href="/events" title="Events">Events</a></td>
-	                <td><a href="#" title="Grants & Calls">Grants & Calls</a></td>
+	                <td><a href="/murals" title="Murals">Murals</a></td>
+	                <td><a href="/percent-public-art" title="Percent for Public Art">Percent for Public Art</a></td>
 	            </tr>
 	            <tr>
-	                <td><a href="#" title="Murals">Murals</a></td>
-	                <td><a href="#" title="Percent for Public Art">Percent for Public Art</a></td>
-	                <td><a href="#" title="Programs & Initiatives">Programs & Initiatives</a></td>
+	                <td><a href="/about" title="About">About</a></td>
+	                <td><a href="/programs-and-initiatives" title="Programs & Initiatives">Programs & Initiatives</a></td>
 	            </tr>
 	        </tbody>
 	    </table>

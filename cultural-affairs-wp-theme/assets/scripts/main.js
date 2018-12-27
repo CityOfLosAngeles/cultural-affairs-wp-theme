@@ -18,8 +18,69 @@
     // All pages
     'common': {
       init: function() {
+
+        $(window).load(function() {
+          $('.flexslider.city-slider').flexslider({
+            animation: "slide",
+            //controlNav: "thumbnails"
+          });
+        });
         // JavaScript to be fired on all pages
-        
+        if ($( window ).width()>=768) {
+          $('.pagination-numbers.desk .go-to-page a.page-numbers').on('click',function(){
+              $('.pagination-numbers.desk .go-to-page .error').addClass('hidden');
+              var total_pages = $('.pagination-numbers.desk .go-to-page input').attr('data-target');
+              var current_page = $('.pagination-numbers.desk .go-to-page input').val();
+              var page_to_go = $('.pagination-numbers.desk .go-to-page input').attr('data-url');
+              if (parseInt(current_page) <= parseInt(total_pages)) {
+                window.location.assign(page_to_go + current_page);
+                console.log('final url desk '+ page_to_go + current_page);
+              } else {
+                $('.pagination-numbers.desk .go-to-page .error').removeClass('hidden');
+                console.log('too high desk ' + current_page + ' - ' + total_pages );
+              }
+              return false;
+          });
+        }else {
+          $('.pagination-numbers.mob .go-to-page a.page-numbers').on('click',function(){
+              $('.pagination-numbers.mob .go-to-page .error').addClass('hidden');
+              var total_pages = $('.pagination-numbers.mob .go-to-page input').attr('data-target');
+              var current_page = $('.pagination-numbers.mob .go-to-page input').val();
+              var page_to_go = $('.pagination-numbers.mob .go-to-page input').attr('data-url');
+              if (parseInt(current_page) <= parseInt(total_pages)) {
+                window.location.assign(page_to_go + current_page);
+                console.log('final url mob '+ page_to_go + current_page);
+              } else {
+                $('.pagination-numbers.mob .go-to-page .error').removeClass('hidden');
+                console.log('too high mob ' + current_page + ' - ' + total_pages );
+              }
+              return false;
+          });
+        }
+
+        $('.pagination-numbers .go-to-page input').keydown(function (e) {
+          // Allow: backspace, delete, tab, escape, enter and .
+          $('.pagination-numbers .go-to-page .error-number').addClass('hidden');
+          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+               // Allow: Ctrl/cmd+A
+              (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+               // Allow: Ctrl/cmd+C
+              (e.keyCode === 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+               // Allow: Ctrl/cmd+X
+              (e.keyCode === 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+               // Allow: home, end, left, right
+              (e.keyCode >= 35 && e.keyCode <= 39)) {
+                   // let it happen, don't do anything
+                   return;
+          }
+          // Ensure that it is a number and stop the keypress
+          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+              e.preventDefault();
+              $('.pagination-numbers .go-to-page .error-number').removeClass('hidden');
+          }
+      });
+
+
         //---- Init controller ----
         var controller = new ScrollMagic.Controller();
 
@@ -68,24 +129,28 @@
 
         // Drop Down Hovers
         $(document).ready(function() {
+
+          $( "<p>Find your Council District <a target='_blank' href='http://neighborhoodinfo.lacity.org/'>here</a>.</p>" ).insertAfter( 'select[name="_ecp_custom_2"]' );
+          $('.tribe-events-filters-label').html('Event Filters');
+
             function toggleNavbarMethod() {
                 if ($(window).width() > 768) {
 
 
                         $('.navbar-nav .menu-item-has-children a').hover(
-                            function(e){ 
+                            function(e){
                               $hoverTrigger = $(this);
                               $subMenu = $hoverTrigger.next('.sub-menu');
-                              $subMenu.show(); 
+                              $subMenu.show();
                             }, // over
                             function(e){
                               $subMenu.hide();
                                $($subMenu).hover(
-                                  function(e){ 
-                                    $(this).show(); 
+                                  function(e){
+                                    $(this).show();
                                   }, // over
-                                  function(e){ 
-                                    $(this).hide(); 
+                                  function(e){
+                                    $(this).hide();
                                   }  // out
                               );
                             }  // out
@@ -99,7 +164,7 @@
             toggleNavbarMethod();
             $(window).resize(toggleNavbarMethod);
         });
-        
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -135,18 +200,18 @@
 
         // Events Hovered
         $('.entry-title > a').hover(
-               function(){ 
+               function(){
                 $(this).closest('.ecs-event').addClass('hover');
               },
-               function(){ 
+               function(){
                 $(this).closest('.ecs-event').removeClass('hover');
               }
         );
         $('.ecs-event > a').hover(
-               function(){ 
+               function(){
                 $(this).closest('.ecs-event').addClass('hover');
               },
-               function(){ 
+               function(){
                 $(this).closest('.ecs-event').removeClass('hover');
               }
         );
@@ -159,7 +224,7 @@
             $('.below-header-section .item').css('height', 'auto');
           }
           $grid.masonry( 'layout' );
-        });  
+        });
         $( window ).resize(function() {
           if ($(window).width() > 991) {
             resizeHomeElements();
@@ -184,6 +249,7 @@
           var caption = $('.item.active .carousel-caption').text();
           $('.carousel-caption-bg').text(caption);
         });
+        
       }
     },
     // Single Contact Division
@@ -218,6 +284,19 @@
     'post_type_archive_grant_and_call': {
       init: function() {
 
+        $(window).load(function() {
+          var maxitemheight = 0;
+          console.log('entra');
+          $('.row-grid .item').each(function() {
+            var maxheight = 0;
+            var itemheight = $( this ).height();
+            if (itemheight > maxitemheight) {
+              maxitemheight = itemheight;
+            }
+            console.log('entra 1');
+          });
+          $('.row-grid .item').css('min-height',maxitemheight);
+        });
         // Ajax function
         function ajaxLoadGrant( val, page ){
             $.ajax({
@@ -232,11 +311,11 @@
                 success: function(data){
                   if ( page === '0' ) {
                     $(".loading-div").hide();
-                    $( "#grant-list" ).html( data); 
+                    $( "#grant-list" ).html( data);
                   }else{
                     $(".loading-div").hide();
                     $(".more-nav").hide();
-                    $( "#grant-list" ).append( data);      
+                    $( "#grant-list" ).append( data);
                   }
                 },
                 error: function(){
@@ -253,6 +332,16 @@
             $('.loading-div').show();
 
             setTimeout( ajaxLoadGrant( $(this).attr("data-filter-class"), $( this ).attr("data-page") ), 3000 );
+        });
+      }
+    },
+    // Single Mural Page
+    'murals': {
+      init: function() {
+        $(window).load(function() {
+          $('.flexslider').flexslider({
+            animation: "slide"
+          });
         });
       }
     },
@@ -320,11 +409,11 @@
                 success: function(data){
                   if ( page === '0' ) {
                     $(".loading-div").hide();
-                    $( "#cultural-center-list" ).html( data); 
+                    $( "#cultural-center-list" ).html( data);
                   }else{
                     $(".loading-div").hide();
                     $(".more-nav").hide();
-                    $( "#cultural-center-list" ).append( data);      
+                    $( "#cultural-center-list" ).append( data);
                   }
                 },
                 error: function(){
@@ -343,7 +432,7 @@
               artClasses = '1';
             }else{
               artClasses = '0';
-            }  
+            }
 
             $('.cultural-center-filter-item').removeClass('active');
             $('#art-class-switch').attr( 'data-filter-class', $(this).attr("data-filter-class") );
@@ -361,13 +450,13 @@
               artClasses = '1';
             }else{
               artClasses = '0';
-            }  
+            }
             $('.loading-div').show();
 
             setTimeout( ajaxLoadCenters( $(this).attr("data-filter-class"), $( this ).attr("data-page"), artClasses ), 3000 );
         });
 
-        // Art Classes Switch      
+        // Art Classes Switch
         $('#art-class-switch').change(function() {
           var artClasses;
 
@@ -377,10 +466,10 @@
             }else{
               $('#classes-filter .filter-label').removeClass('on').html('Art Classes Available (Off)');
               artClasses = '0';
-            }  
+            }
             $('.loading-div').show();
 
-            setTimeout( ajaxLoadCenters( $(this).attr("data-filter-class"), $( this ).attr("data-page"), artClasses ), 3000 );   
+            setTimeout( ajaxLoadCenters( $(this).attr("data-filter-class"), $( this ).attr("data-page"), artClasses ), 3000 );
         });
 
       }
@@ -405,11 +494,11 @@
                 success: function(data){
                   if ( page === '0' ) {
                     $(".loading-div").hide();
-                    $( "#artist-project-list" ).html( data); 
+                    $( "#artist-project-list" ).html( data);
                   }else{
                     $(".loading-div").hide();
                     $(".more-nav").hide();
-                    $( "#artist-project-list" ).append( data);      
+                    $( "#artist-project-list" ).append( data);
                   }
                 },
                 error: function(){
@@ -428,7 +517,7 @@
               artClasses = '1';
             }else{
               artClasses = '0';
-            }  
+            }
 
             $('.artist-project-filter-item').removeClass('active');
             $('#art-class-switch').attr( 'data-filter-class', $(this).attr("data-filter-class") );
@@ -446,14 +535,40 @@
               artClasses = '1';
             }else{
               artClasses = '0';
-            }  
+            }
             $('.loading-div').show();
 
             setTimeout( ajaxLoadProjects( $(this).attr("data-filter-class"), $( this ).attr("data-page"), artClasses ), 3000 );
         });
 
-        
 
+
+      }
+    },
+    'tribe_events_template_default': {
+      init: function() {
+
+      function showEvents() {
+        console.log('show events function');
+        var event_ID = $('#rest-events').attr('data_event');
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            cache: false,
+            url: '/wp-admin/admin-ajax.php',
+            data: { action : 'tribe_all_event_rest', eventid : event_ID },
+
+            success: function(data){
+                var $data = $(data);
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+            }
+
+        });
+        }
+ 
+        $( document ).ready( function() { showEvents(); } );
       }
     },
     // City Art Collection Page

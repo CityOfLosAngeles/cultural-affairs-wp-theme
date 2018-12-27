@@ -1,4 +1,5 @@
 .percent-public-art, .private-arts-development-fee-program-adf, .public-works-improvements-arts-program-pwiap, .percent-public-art-projects {
+
 	// General Styles
 	h3 {
 		margin-bottom: 0;
@@ -32,6 +33,7 @@
 			color: $green-blue;
 		}
 	}
+
 	// Registration Options Styles
 	.art-programs {
 		padding-bottom: 10px;
@@ -63,12 +65,14 @@
 				margin-bottom: 5px;
 			}
 		}
+
 		@media ( min-width: $screen-sm ) {
 			padding-bottom: 20px;
 			.wrapper {
 				max-width: 85%;
 			}
 		}
+
 		@media ( min-width: $screen-md ) {
 			padding-top: 60px;
 		}
@@ -99,13 +103,19 @@
 			}
 		}
 	}
+	
 }
 .percent-public-art {
 	.art-programs {
 		.option {
+			
 			@media ( min-width: $screen-sm ) {
 				width: 50%;
 				float: left;
+				.wrapper {
+					
+					
+				}
 			}
 			@media ( min-width: $screen-md ) {
 				.wrapper {
@@ -119,9 +129,11 @@
 		.projects-box {
 			position: relative;
 			margin-bottom: 20px;
+
 			a {
 				text-decoration: none;
 				color: $dark-grey;
+
 				h2 {
 					margin-bottom: 5px;
 					margin-top: 15px;
@@ -132,6 +144,7 @@
 					overflow: hidden;
 					position: relative;
 					border: 1px solid $light-grey;
+
 					img {
 						height: 100%;
 						width: auto;
@@ -141,6 +154,7 @@
 						@include transition(transform 4s ease);
 					}
 				}
+
 				&:hover, &:focus, &:active {
 					h2 {
 						color: $green-blue;
@@ -157,63 +171,70 @@
 		}
 	}
 }
+
 .percent-public-art-projects {
-	.page-header {
-		margin-bottom: 0;
-	}
-	.intro {
-		margin-bottom: 30px;
-		@media ( min-width: $screen-sm ) {
-			margin-bottom: 60px;
+		.page-header {
+			margin-bottom: 0;
 		}
-	}
-	.public-art-projects-list {
-		@media ( min-width: $screen-sm ) {
-			.project {
-				min-height: 400px;
+		.intro {
+			margin-bottom: 30px;
+			
+			@media ( min-width: $screen-sm ) {
+				margin-bottom: 60px;
 			}
 		}
-	}
-	.projects-box {
-		position: relative;
-		margin-bottom: 20px;
-		a {
-			text-decoration: none;
-			color: $dark-grey;
-			h2 {
-				margin-bottom: 5px;
-				margin-top: 15px;
-			}
-			.projects-img {
-				height: 220px;
-				width: auto;
-				overflow: hidden;
-				position: relative;
-				border: 1px solid $light-grey;
-				img {
-					height: 100%;
-					width: auto;
-					max-width: inherit;
-					position: absolute;
-					left: 0;
-					@include transition(transform 4s ease);
+		.public-art-projects-list {
+			@media ( min-width: $screen-sm ) {
+				.project {
+					min-height: 400px;
 				}
 			}
-			&:hover, &:focus, &:active {
+		}
+		.projects-box {
+			position: relative;
+			margin-bottom: 20px;
+
+			a {
+				text-decoration: none;
+				color: $dark-grey;
+
 				h2 {
-					color: $green-blue;
+					margin-bottom: 5px;
+					margin-top: 15px;
 				}
 				.projects-img {
-					background-color: #000;
+					height: 220px;
+					width: auto;
+					overflow: hidden;
+					position: relative;
+					border: 1px solid $light-grey;
 
 					img {
-						@include opacity(0.8);
+						height: 100%;
+						width: auto;
+						max-width: inherit;
+						position: absolute;
+						left: 0;
+						@include transition(transform 4s ease);
+					}
+				}
+
+				&:hover, &:focus, &:active {
+					h2 {
+						color: $green-blue;
+					}
+					.projects-img {
+						background-color: #000;
+
+						img {
+							@include opacity(0.8);
+						}
 					}
 				}
 			}
 		}
-	}
 }
+
 .private-arts-development-fee-program-adf, .public-works-improvements-arts-program-pwiap {
 	.wrap {
 		.main > .container {

@@ -47,7 +47,6 @@ function upload_mimes ( $existing_mimes=array() ) {
 
   // add the file extension to the array
 
-  //$existing_mimes['svg'] = 'mime/type';
   $existing_mimes['svg']  = 'image/svg+xml';
 
   // call the modified list of extensions
@@ -79,12 +78,8 @@ add_filter('post_type_link', __NAMESPACE__ . '\\rating_permalink', 10, 3);
  
 
 /**
- * Overwrite Time for events
+ * Custom breadcrumbs
  */
-function tribe_events_event_schedule_details_inner( $inner, $event_id ) {
-    return "<div class='test'>".tribe_get_start_date( $event, false, $time_format )."</div>";
-}
-apply_filters( 'tribe_events_event_schedule_details_inner', __NAMESPACE__ . '\\tribe_events_event_schedule_details_inner' );
 
 function custom_wpseo_breadcrumb_output( $output ){
     if( is_archive() ){
@@ -135,30 +130,9 @@ add_filter( 'get_the_archive_title', function ( $title ) {
  * Changing copy on submit events
  */
 function before_events_community_text() { 
-  echo "<div class='intro'>Please submit your Festival Guide, Heritage Month, or DCA Sponsored Event for review to be included in DCA’s digital and printed marketing materials.</div>"; 
+  echo "<div class='intro'>DCA's Marketing, Development, Design, and Digital Research Division curates cultural events in the LA region. We invite you to submit DCA-sponsored events and other cultural events to be included in the DCA's web calendar, Festival Guide, and  our Heritage Month Calendars and Cultural Guides. We review all submissions and do not accept non-arts/cultural events.</div>"; 
 }
 add_action('tribe_events_community_form_before_template', __NAMESPACE__ . '\\before_events_community_text'); 
-
-/*
-** Removing extra content on submit event page
-**
-
-function after_events_community_text() { 
-  echo "<div class='row title'><div class='col-xs-12'><h2>Final Check! Did you ...</h2></div>"; 
-  echo "<div class='col-xs-12 col-sm-2 text-center person-info'>
-        <div><img class='img-circle' src='".get_template_directory_uri()."/dist/images/events/submit_event_person.png' /></div>
-        <div><small><b>Will Caperton y Montoya</b></small></div>
-        <div><small>Director of Marketing and Development</small></div>
-        </div>
-        <div class='col-xs-12 col-sm-10 message'><ul>
-        <li>Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta.</li>
-        <li>Non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.</li>
-        <li>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</li>
-        </ul></div></div>";
-}
-add_action('tribe_events_community_before_form_submit', __NAMESPACE__ . '\\after_events_community_text'); */
-
-
 
 /**
  * Ajax function to load more cultural centers
@@ -486,3 +460,304 @@ function more_grants(){
 }
 add_action( 'wp_ajax_nopriv_more_grants', __NAMESPACE__ . '\\more_grants' );
 add_action( 'wp_ajax_more_grants', __NAMESPACE__ . '\\more_grants' );
+
+
+/**
+ * Ajax function to load more cultural centers
+ */
+
+function tribe_event_rest(){
+
+  $event_ID = $_POST['eventid'];
+
+  $resultApi = file_get_contents('https://culturela.org/wp-json/tribe/events/v1/events/'.$event_ID);
+
+  $data = json_decode($resultApi, true);
+
+  $newArray = array();
+
+  $uuid = trim(file_get_contents('https://www.uuidgenerator.net/api/version4'));
+
+  $newArray['uuid'] = $uuid;
+  $newArray['externalid'] = $data['id'];
+  $newArray['rid'] = $data['id'];
+  $newArray['title'] = $data['title'];
+  $newArray['start'] = $data['start_date'];
+  $newArray['end'] = $data['end_date'];
+  $newArray['informationwebsite'] = $data['website'];
+  $newArray['locationname'] = $data['venue']['venue'];
+  $newArray['address'] = $data['venue']['address'];
+  $newArray['city'] = $data['venue']['city'];
+  $newArray['state'] = $data['venue']['state'];
+  $newArray['zip'] = $data['venue']['zip'];
+  $newArray['lat'] = $data['venue']['geo_lat'];
+  $newArray['long'] = $data['venue']['geo_lng'];
+  $newArray['eventimage'] = $data['image']['url'];
+  $newArray['eventtype'] = "(ITA will provide you this)";
+  $newArray['department'] = "(ITA will provide you this)";
+  $newArray['description'] = $data['description'];
+  $tags = '';
+  if($data['categories']) {
+      foreach ($data['categories'] as $tag) {
+          $tags .= $tag['name'].",";
+      }
+  }
+  $newArray['tags'] = $tags;
+  $newArray['eventfile'] = '';
+  if ($data['cost'] == 'Free') {
+      $cost = 'No';
+  } else {
+      $cost = 'Yes';
+  }
+  $newArray['eventcost'] = $cost;
+  $newArray['eventfee'] = '';
+  $newArray['eventages'] = '';
+  $newArray['eventcontactemail'] = '';
+  $newArray['eventcontactname'] = '';
+  $newArray['eventcontactphone'] = $data['venue']['phone'];
+
+  die(json_encode($newArray));
+
+  
+}
+add_action( 'wp_ajax_nopriv_tribe_event_rest', __NAMESPACE__ . '\\tribe_event_rest' );
+add_action( 'wp_ajax_tribe_event_rest', __NAMESPACE__ . '\\tribe_event_rest' );
+
+
+function tribe_all_event_rest(){
+
+  $resultApi = file_get_contents('https://culturela.org/wp-json/tribe/events/v1/events/');
+
+  $data = json_decode($resultApi, true);
+
+  $newArray = array();
+
+  $uuid = trim(file_get_contents('https://www.uuidgenerator.net/api/version4'));
+
+  foreach ($data['events'] as $event) {
+
+  $eventID = $event['id'];
+
+  $newArray[$eventID]['uuid'] = $uuid;
+  $newArray[$eventID]['externalid'] = $event['id'];
+  $newArray[$eventID]['rid'] = $event['id'];
+  $newArray[$eventID]['title'] = $event['title'];
+  $newArray[$eventID]['start'] = $event['start_date'];
+  $newArray[$eventID]['end'] = $event['end_date'];
+  $newArray[$eventID]['informationwebsite'] = $event['website'];
+  $newArray[$eventID]['locationname'] = $event['venue']['venue'];
+  $newArray[$eventID]['address'] = $event['venue']['address'];
+  $newArray[$eventID]['city'] = $event['venue']['city'];
+  $newArray[$eventID]['state'] = $event['venue']['state'];
+  $newArray[$eventID]['zip'] = $event['venue']['zip'];
+  $newArray[$eventID]['lat'] = $event['venue']['geo_lat'];
+  $newArray[$eventID]['long'] = $event['venue']['geo_lng'];
+  $newArray[$eventID]['eventimage'] = $event['image']['url'];
+  $newArray[$eventID]['eventtype'] = "(ITA will provide you this)";
+  $newArray[$eventID]['department'] = "(ITA will provide you this)";
+  $newArray[$eventID]['description'] = $event['description'];
+  $tags = '';
+  if($event['categories']) {
+    foreach ($event['categories'] as $tag) {
+        $tags .= $tag['name'].",";
+    }
+  }
+  $newArray[$eventID]['tags'] = $tags;
+  $newArray[$eventID]['eventfile'] = '';
+  if ($event['cost'] == 'Free') {
+      $cost = 'No';
+  } else {
+      $cost = 'Yes';
+  }
+  $newArray[$eventID]['eventcost'] = $cost;
+  $newArray[$eventID]['eventfee'] = '';
+  $newArray[$eventID]['eventages'] = '';
+  $newArray[$eventID]['eventcontactemail'] = '';
+  $newArray[$eventID]['eventcontactname'] = '';
+  $newArray[$eventID]['eventcontactphone'] = $event['venue']['phone'];
+
+  
+}
+
+  die(json_encode($newArray));
+
+  
+}
+add_action( 'wp_ajax_nopriv_tribe_all_event_rest', __NAMESPACE__ . '\\tribe_all_event_rest' );
+add_action( 'wp_ajax_tribe_all_event_rest', __NAMESPACE__ . '\\tribe_all_event_rest' );
+
+ 
+// Return all post IDs
+function walden_get_all_post_ids($eventid) {
+  $event_id = $eventid['id'];
+  $event_page = $eventid['page'];
+  
+  if ($event_id) {
+  $resultApi = file_get_contents('https://culturela.org/wp-json/tribe/events/v1/events/'.$event_id);
+  } else {
+    if ($event_page) {
+      $resultApi = file_get_contents('https://culturela.org/wp-json/tribe/events/v1/events?page='.$event_page.'&per_page=100');
+    } else {
+      $resultApi = file_get_contents('https://culturela.org/wp-json/tribe/events/v1/events/?per_page=100');
+    }
+  }
+
+  $data = json_decode($resultApi, true);
+
+  $newArray = array();
+
+  $uuid = trim(file_get_contents('https://www.uuidgenerator.net/api/version4'));
+
+  if ($event_id) {
+  $newArray['uuid'] = $uuid;
+  $newArray['externalid'] = $data['id'];
+  $newArray['rid'] = $data['id'];
+  $newArray['title'] = $data['title'];
+  $newArray['start'] = $data['start_date'];
+  $newArray['end'] = $data['end_date'];
+  $newArray['informationwebsite'] = $data['website'];
+  $newArray['locationname'] = $data['venue']['venue'];
+  $newArray['address'] = $data['venue']['address'];
+  $newArray['city'] = $data['venue']['city'];
+  $newArray['state'] = $data['venue']['state'];
+  $newArray['zip'] = $data['venue']['zip'];
+  $newArray['lat'] = $data['venue']['geo_lat'];
+  $newArray['long'] = $data['venue']['geo_lng'];
+  $newArray['eventimage'] = $data['image']['url'];
+  $newArray['eventtype'] = "(ITA will provide you this)";
+  $newArray['description'] = $data['description'];
+  $tags = '';
+  if($data['categories']) {
+      foreach ($data['categories'] as $tag) {
+          $tags .= $tag['name'].",";
+      }
+  }
+  $newArray['tags'] = $tags;
+  $newArray['eventfile'] = '';
+  if ($data['cost'] == 'Free') {
+      $cost = 'No';
+  } else {
+      $cost = 'Yes';
+  }
+  $newArray['eventcost'] = $cost;
+  $newArray['eventfee'] = $data['cost'];
+  $newArray['eventcontactemail'] = $data['organizer']['email'];
+  $newArray['eventcontactname'] = $data['organizer']['organizer'];
+  $newArray['eventcontactphone'] = $data['organizer']['phone'];
+  $finalArray = array();
+  $finalArray = $newArray;
+  } else {
+
+    foreach ($data['events'] as $event) {
+
+      $eventID = $event['id'];
+
+      $newArray[$eventID]['uuid'] = $uuid;
+      $newArray[$eventID]['externalid'] = $event['id'];
+      $newArray[$eventID]['rid'] = $event['id'];
+      $newArray[$eventID]['title'] = $event['title'];
+      $newArray[$eventID]['start'] = $event['start_date'];
+      $newArray[$eventID]['end'] = $event['end_date'];
+      $newArray[$eventID]['informationwebsite'] = $event['website'];
+      $newArray[$eventID]['locationname'] = $event['venue']['venue'];
+      $newArray[$eventID]['address'] = $event['venue']['address'];
+      $newArray[$eventID]['city'] = $event['venue']['city'];
+      $newArray[$eventID]['state'] = $event['venue']['state'];
+      $newArray[$eventID]['zip'] = $event['venue']['zip'];
+      $newArray[$eventID]['lat'] = $event['venue']['geo_lat'];
+      $newArray[$eventID]['long'] = $event['venue']['geo_lng'];
+      $newArray[$eventID]['eventimage'] = $event['image']['url'];
+      $newArray[$eventID]['description'] = $event['description'];
+      $tags = '';
+      if($event['categories']) {
+        foreach ($event['categories'] as $tag) {
+            $tags .= $tag['name'].",";
+        }
+      }
+      $newArray[$eventID]['tags'] = $tags;
+      $newArray[$eventID]['eventfile'] = '';
+      if ($event['cost'] == 'Free') {
+          $cost = 'No';
+      } else {
+          $cost = 'Yes';
+      }
+      $newArray[$eventID]['eventcost'] = $cost;
+      $newArray[$eventID]['eventfee'] = $event['cost'];
+      $newArray[$eventID]['eventcontactemail'] = '';
+      $newArray[$eventID]['eventcontactname'] = '';
+      $newArray[$eventID]['eventcontactphone'] = $event['venue']['phone'];
+
+      
+    }
+    $finalArray = array();
+    $finalArray['events'] = $newArray;
+    $finalArray['total'] = $data['total'];
+    $finalArray['total_pages'] = $data['total_pages'];
+  }
+die(json_encode($finalArray,true));
+}
+
+function rest_event_func() {
+  register_rest_route( 'events/v1', '/dca-events/', array(
+    'methods' => 'GET',
+    'callback' => __NAMESPACE__ . '\\walden_get_all_post_ids',
+   ));
+  register_rest_route( 'events/v1', '/dca-events/page=(?P<page>\d+)', array(
+    'methods' => 'GET',
+    'callback' => __NAMESPACE__ . '\\walden_get_all_post_ids',
+   ));
+  register_rest_route( 'events/v1', '/dca-events/id=(?P<id>\d+)', array(
+    'methods' => 'GET',
+    'callback' => __NAMESPACE__ . '\\walden_get_all_post_ids',
+   ));
+}
+
+ add_action( 'rest_api_init', __NAMESPACE__ . '\\rest_event_func' );
+
+add_filter( 'tribe_rest_event_max_per_page', function() { return 100; } );
+
+
+function separate_result_types($hits) {
+    $types = array();
+    if (!is_array($types['program_initiative'])) $types['program_initiative'] = array();
+    if (!is_array($types['cultural_center'])) $types['cultural_center'] = array();
+    if (!is_array($types['contact-division'])) $types['contact-division'] = array();
+    if (!is_array($types['grantee'])) $types['grantee'] = array();
+    if (!is_array($types[''])) $types['grant_and_call'] = array();
+    if (!is_array($types['council_districtgrant_and_call'])) $types['council_district'] = array();
+    if (!is_array($types['artists-projects'])) $types['artists-projects'] = array();
+    if (!is_array($types['murals'])) $types['murals'] = array();
+    if (!is_array($types['page'])) $types['page'] = array();
+    if (!is_array($types['post'])) $types['post'] = array();
+ 
+    // Split the post types in array $types
+    if (!empty($hits)) {
+        foreach ($hits[0] as $hit) {
+            if (!is_array($types[$hit->post_type])) $types[$hit->post_type] = array();                        
+            array_push($types[$hit->post_type], $hit);
+        }
+    }
+
+    // Merge back to $hits in the desired order
+    $hits[0] = array_merge($types['page'], $types['grant_and_call'], $types['murals'], $types['cultural_center'], $types['program_initiative'],  $types['contact-division'], $types['grantee'],  $types['council_district'], $types['artists-projects'], $types['post']);
+
+    return $hits;
+}
+
+
+function rlv_exact_boost($results) {
+  $query = strtolower(get_search_query());
+  foreach ($results as $post_id => $weight) {
+    $post = relevanssi_get_post($post_id);
+    // Boost exact title matches
+    if (stristr($post->post_title, $query) != false) {
+      $results[$post_id] = $weight * 50;
+    }
+    if (strcmp(strtolower($post->post_title), $query) == 0) {
+      $results[$post_id] = $weight * 100;
+    }
+  }
+  return $results;
+}
+add_filter('relevanssi_results', __NAMESPACE__ . '\\rlv_exact_boost');
+ 

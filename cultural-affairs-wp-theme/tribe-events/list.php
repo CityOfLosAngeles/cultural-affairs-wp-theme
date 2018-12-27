@@ -36,7 +36,6 @@ do_action( 'tribe_events_before_template' );
 				'order' => 'ASC'
 				);
 				$categories = get_categories($args);
-				//echo "<pre>".print_r($categories,1)."</pre>";
 				foreach($categories as $category) { 
 					if (get_field('featured_category',$category->taxonomy.'_'.$category->term_id )) {
 						$terms = get_term_by( 'id',$category->term_id,$category->taxonomy );
@@ -57,7 +56,6 @@ do_action( 'tribe_events_before_template' );
 							'order' => 'ASC'
 							);
 						$categories_child = get_categories($args_child);
-						//echo "<pre>".print_r($categories,1)."</pre>";
 						foreach($categories_child as $category_child) { 
 							if (get_field('featured_category',$category_child->taxonomy.'_'.$category_child->term_id )) {
 								$terms = get_term_by( 'id',$category_child->term_id,$category_child->taxonomy );
@@ -100,7 +98,6 @@ do_action( 'tribe_events_before_template' );
 							'order' => 'ASC'
 							);
 						$categories_child = get_categories($args_child);
-						//echo "<pre>".print_r($categories,1)."</pre>";
 						foreach($categories_child as $category_child) { 
 							if (!get_field('featured_category',$category_child->taxonomy.'_'.$category_child->term_id )) {
 								$terms = get_term_by( 'id',$category_child->term_id,$category_child->taxonomy );
@@ -153,7 +150,50 @@ do_action( 'tribe_events_before_template' );
 			'order' => 'ASC'
 			);
 		$categories = get_categories($args);
-		//echo "<pre>".print_r($categories,1)."</pre>";
+		foreach($categories as $category) { 
+			if (!get_field('featured_category',$category->taxonomy.'_'.$category->term_id )) {
+				$terms = get_term_by( 'id',$category->term_id,$category->taxonomy );
+				$term_link = get_term_link( $terms );
+				$cat_name = 'events-category-'.$category->slug;
+				if ($current_cat == $cat_name) {
+					$active_class="active";
+				}else {
+					$active_class="";
+				}
+				echo '</span><a class="'.$cat_name.' '.$active_class.'" href="' . $term_link . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><div class="category-name">' . $category->name.'</div></a>';
+				$args_child = array(
+					'taxonomy'     => 'tribe_events_cat',
+					'hide_empty' => false,
+					'parent' => $category->term_id,
+					'orderby' => 'name',
+					'order' => 'ASC'
+					);
+				$categories_child = get_categories($args_child);
+				foreach($categories_child as $category_child) { 
+					if (!get_field('featured_category',$category_child->taxonomy.'_'.$category_child->term_id )) {
+						$terms = get_term_by( 'id',$category_child->term_id,$category_child->taxonomy );
+						$term_link = get_term_link( $terms );
+						$cat_name = 'events-category-'.$category->slug.'-'.$category_child->slug;
+						if ($current_cat == $cat_name) {
+							$active_class="active";
+						}else {
+							$active_class="";
+						}
+						$add_class = '';
+						if ($category_child->category_parent != 0) {
+							$add_class = 'cat-child '.$cat_name.' '.$active_class;
+						} else {
+							$add_class = ''.$cat_name.' '.$active_class;
+						}
+						echo '<a class="'.$add_class.'" href="' . $term_link . '" title="' . sprintf( __( "View all posts in %s" ), $category_child->name ) . '" ' . '><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><div class="category-name">' . $category_child->name.'</div></a>';
+						
+					}
+				} 
+			}
+		} 
+		?>
+		<hr/>
+		<?php
 		foreach($categories as $category) { 
 			if (get_field('featured_category',$category->taxonomy.'_'.$category->term_id )) {
 				$terms = get_term_by( 'id',$category->term_id,$category->taxonomy );
@@ -174,7 +214,6 @@ do_action( 'tribe_events_before_template' );
 					'order' => 'ASC'
 					);
 				$categories_child = get_categories($args_child);
-				//echo "<pre>".print_r($categories,1)."</pre>";
 				foreach($categories_child as $category_child) { 
 					if (get_field('featured_category',$category_child->taxonomy.'_'.$category_child->term_id )) {
 						$terms = get_term_by( 'id',$category_child->term_id,$category_child->taxonomy );
@@ -201,48 +240,7 @@ do_action( 'tribe_events_before_template' );
 		?>
 		<hr/>
 		<?php
-		foreach($categories as $category) { 
-			if (!get_field('featured_category',$category->taxonomy.'_'.$category->term_id )) {
-				$terms = get_term_by( 'id',$category->term_id,$category->taxonomy );
-				$term_link = get_term_link( $terms );
-				$cat_name = 'events-category-'.$category->slug;
-				if ($current_cat == $cat_name) {
-					$active_class="active";
-				}else {
-					$active_class="";
-				}
-				echo '</span><a class="'.$cat_name.' '.$active_class.'" href="' . $term_link . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><div class="category-name">' . $category->name.'</div></a>';
-				$args_child = array(
-					'taxonomy'     => 'tribe_events_cat',
-					'hide_empty' => false,
-					'parent' => $category->term_id,
-					'orderby' => 'name',
-					'order' => 'ASC'
-					);
-				$categories_child = get_categories($args_child);
-				//echo "<pre>".print_r($categories,1)."</pre>";
-				foreach($categories_child as $category_child) { 
-					if (!get_field('featured_category',$category_child->taxonomy.'_'.$category_child->term_id )) {
-						$terms = get_term_by( 'id',$category_child->term_id,$category_child->taxonomy );
-						$term_link = get_term_link( $terms );
-						$cat_name = 'events-category-'.$category->slug.'-'.$category_child->slug;
-						if ($current_cat == $cat_name) {
-							$active_class="active";
-						}else {
-							$active_class="";
-						}
-						$add_class = '';
-						if ($category_child->category_parent != 0) {
-							$add_class = 'cat-child '.$cat_name.' '.$active_class;
-						} else {
-							$add_class = ''.$cat_name.' '.$active_class;
-						}
-						echo '<a class="'.$add_class.'" href="' . $term_link . '" title="' . sprintf( __( "View all posts in %s" ), $category_child->name ) . '" ' . '><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><div class="category-name">' . $category_child->name.'</div></a>';
-						
-					}
-				} 
-			}
-		} 
+		
 		?>
 	</div>
 

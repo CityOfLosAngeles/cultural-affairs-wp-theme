@@ -1,18 +1,24 @@
 <div class="contact-page">
-	<?php
+			
+
+<?php
 	$args = array(
 		'post_type' => 'contact-division',
 		'orderby' => 'date',
 		'posts_per_page' => -1
 		);
+
 	$poststeam = new WP_Query($args);
 	if($poststeam->have_posts()){$i = 0;
 		$gallery_tabs = '';
 		$gallery_content = '';
+		
 		while($poststeam->have_posts()) {
 			$poststeam->the_post(); 
+
 			$contact_phone = get_field ('phone');
 			$contact_email = get_field ('email');
+
 			?>
 			<div class="single-division">
 				<div class="row">
@@ -34,5 +40,5 @@
 	}
 	?>
 	<?php the_content(); ?>
-	<?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+<?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
 </div>

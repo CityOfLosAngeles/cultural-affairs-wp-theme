@@ -1,5 +1,6 @@
 // General Cultural Center Styles
 .single-council_district {
+
 	// General Styles
 	h3 {
 		margin-bottom: 0;
@@ -7,12 +8,18 @@
 	}
 	a {
 		color: $about;
+
 		&.btn {
 			color: $grey;
+
 			&:hover, &:active, &:focus {
 				color: #fff;
 			}
 		}
+	}
+	img {
+		max-width: 100%;
+		height: auto;
 	}
 	header {
 		&.navbar {
@@ -44,8 +51,10 @@
 			}
 		}
 	}
+
 	.wrap {
 		margin-top: 0;
+
 		// Hero Area
 		.hero-area {
 			margin-left: -15px;
@@ -55,17 +64,21 @@
 			background-position: center;
 			background-size: cover;
 			margin-bottom: 30px;
+
 			@media ( min-width: $screen-sm ) {
 				height: 400px;
 				margin-bottom: 0px;
 			}
+
 			@media ( min-width: $screen-md ) {
 				margin-bottom: 40px;
 			}
 		}
+
 		// Main Area
 		.main-area {
 			clear: left;
+			
 			h1 {
 				margin-bottom: 0;
 				color: $grey;
@@ -95,6 +108,7 @@
 				margin: 15px;
 				clear: both;
 			}
+
 			// Grantee Boxes
 			.grantee-list {
 				margin-bottom: 15px;
@@ -102,6 +116,7 @@
 			.grantee-box {
 				position: relative;
 				margin-bottom: 20px;
+
 				h2 {
 					margin-top: 15px;
 				}
@@ -135,7 +150,9 @@
 						opacity: .8;
 					}
 				}
+
 			}
+
 			// Cultural Center Boxes
 			.cultural-center-list {
 				@media ( min-width: $screen-sm ) {
@@ -147,9 +164,11 @@
 			.cultural-center-box {
 				position: relative;
 				margin-bottom: 20px;
+
 				a {
 					text-decoration: none;
 					color: $grey;
+
 					h2 {
 						margin-bottom: 5px;
 						margin-top: 15px;
@@ -170,6 +189,7 @@
 						overflow: hidden;
 						position: relative;
 						border: 1px solid $light-grey;
+
 						img {
 							height: 100%;
 							width: auto;
@@ -180,6 +200,7 @@
 							@include transition(transform 4s ease);
 						}
 					}
+
 					&:hover, &:focus, &:active {
 						h2 {
 							color: $about;
@@ -193,8 +214,10 @@
 						}
 					}
 				}
+
 				@media ( min-width: $screen-sm ) {
 					margin-bottom: 30px;
+
 					a {
 						.thumb-container {
 							height: 165px;
@@ -209,16 +232,19 @@
 					}
 				}
 			}
+
 			// Events
 			.events-title {
 				margin-bottom: 15px;
 			}
 			.tribe-events-list {
 				margin-bottom: 20px;
+				
 				.type-tribe_events {
 					padding: 15px 0;
 					border-top: 1px solid $light-grey;
 					border-bottom: 1px solid $light-grey;
+
 					a {
 						color: $grey;
 						&:hover {
@@ -227,6 +253,7 @@
 					}
 					.tribe-events-list-event-title {
 						margin-top: 0;
+
 						a {
 							text-decoration: none;
 						}
@@ -258,6 +285,7 @@
 					& > div {
 						padding: 0;
 					}
+
 					@media ( min-width: $screen-md ) {
 						.meta-info {
 							padding-right: 30px;
@@ -273,6 +301,7 @@
 					background-color: #fff;
 					padding-bottom: 10px;
 					margin-bottom: 0;
+
 					.tribe-events-venue-details {
 						border: 0;
 						margin: 0;
@@ -281,6 +310,7 @@
 					}
 				}
 			}
+
 			// Artists Projects Boxes
 			.artists-project-list, .murals-project-list {
 				margin-bottom: 15px;
@@ -326,7 +356,9 @@
 						opacity: .8;
 					}
 				}
+
 			}
+			
 			.tags-container {
 				.tag {
 					font-size: 12px;
@@ -338,10 +370,13 @@
 					margin-right: 5px;
 				}
 			}
+
 		}
+
 		// Side Area
 		.general-info-area {
 			padding-bottom: 30px;
+
 			h1 {
 				margin-bottom: 15px;
 			}
@@ -366,10 +401,15 @@
 					font-style: italic;
 				}
 			}
+
 			@media ( min-width: $screen-sm ) {
 				float: right;
 				padding-top: 20px;
 				padding-bottom: 0;
+			}
+
+			@media ( min-width: $screen-md ) {
+				
 			}
 		}
 	}

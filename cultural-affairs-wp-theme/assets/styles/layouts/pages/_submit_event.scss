@@ -7,9 +7,11 @@
 	.wrap{
 		margin-top: 30px;
 		margin-bottom: 30px;
+
 		.page-header {
 			margin-bottom: 5px;
 		}
+
 		@media ( min-width: $screen-sm ) {
 			margin-top: 60px;
 			margin-bottom: 60px;
@@ -73,7 +75,7 @@
 			}
 		}
 		.venue, .date-row, .currency-row {
-			margin: 10px -15px;
+			    margin: 10px -15px;
 		}
 		.eventForm {
 			td {
@@ -132,6 +134,7 @@
 			border-radius: 0px;
 			margin-top: 10px;
 			padding: 0 15px;
+			
 			label {
 				font-weight: 300;
 			}
@@ -148,6 +151,7 @@
 					}
 				}
 			}
+
 			@media ( min-width: $screen-sm ) {
 				.label-sm-right {
 					text-align: right;
@@ -169,6 +173,7 @@
 						}
 					}
 				}
+
 			}
 		}
 		#event-categories {
@@ -179,6 +184,7 @@
 		.title {
 			padding-top: 30px;
 			padding-bottom: 40px;
+
 			h2 {
 				margin-bottom: 30px;
 			}
@@ -197,12 +203,14 @@
 				padding-top: 20px;
 				ul {
 					font-weight: 500;
+
 					li {
 						margin-bottom: 15px;
 						line-height: 30px;
 						padding-left: 10px;
 					}
 				}
+
 				@media ( min-width: $screen-sm ) {
 					padding-top: 0;
 				}

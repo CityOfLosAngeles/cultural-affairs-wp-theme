@@ -5,7 +5,7 @@
 				<div class="grantee-box item">
 					<h2>Grantees</h2>
 					<p>Learn ​more about ​DCA’s Grantees.</p>
-					<a href="/grantees/" title="View All Grantees" class="btn">View All Grantees</a>
+					<a href="/current-grantees/" title="View All Grantees" class="btn">View All Grantees</a>
 				</div>
 			</div>
 		</div>

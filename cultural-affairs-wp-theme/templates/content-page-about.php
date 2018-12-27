@@ -1,6 +1,15 @@
 <div class="container top-section">
+
 	<div class="row">
-		<div class="col-xs-12 col-md-8 left-container"><?php the_content(); ?></div>
+		<div class="col-xs-12 col-md-8 left-container">
+			<?php if(get_field('slider_position') == 'top'){ ?>
+		<?php get_template_part('templates/component', 'image-slider'); ?>
+	<?php } ?>
+	<?php the_content(); ?>
+		<?php if(get_field('slider_position') == 'bottom'){ ?>
+		<?php get_template_part('templates/component', 'image-slider'); ?>
+	<?php } ?>
+	</div>
 		<div class="col-xs-12 col-md-4 right-container">
 			<?php
 			if( get_field('quotes') ) {
@@ -37,6 +46,7 @@
 		<a class="button-grey" href="/city-art-collection" title="City Art Collection">City Art Collection</a>
 	</div>
 </div>
+
 
 <div class="container bottom-section bottom-spacing">
 	<div class="row">
@@ -77,13 +87,15 @@
 	<h2>DISCOVER YOUR NEIGHBORHOOD</h2>
 	<p>Enter your LA zip code to find out about exciting arts and cultural events, centers, and programming in, or near, your neighborhood.</p>
 	<div class="form-zip col-md-4 col-md-offset-4">	
-		<form action="/" method="get">
-			<div class="input-group">
-				<input type="text" name="s" id="search" value="<?php the_search_query(); ?>" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Zip Code'" class="form-control" placeholder="Enter Zip Code">
-				<span class="location-icon"></span>
-				<span class="input-group-btn"><button type="submit" class="btn btn-search">Submit</button></span>
-			</div>
-		</form>
+
+        <form action="/" method="get">
+            <div class="input-group">
+                <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Zip Code'" class="form-control" placeholder="Enter Zip Code"><span class="location-icon"></span><span class="input-group-btn">
+              <button type="submit" class="btn btn-search">Submit</button>
+          </span>
+
+            </div>
+        </form>
 	</div>
 </div>
 
@@ -91,7 +103,9 @@
 	<div class="carousel-inner" role="listbox">
 		<?php
 		$posts = get_field('districts_directory');
+
 		if( $posts ): ?>
+
 		<?php 
 		$i = 0;
 		$caption_nav = '';
@@ -117,19 +131,19 @@
 
 		<?php $i++; endforeach; ?>
 		<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-		<?php endif; ?>
-		<div class="caption-nav">
-			<a class="left carousel-control" href="#map-carousel" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<div class="carousel-caption-bg"><?php echo $caption_nav; ?></div>
-			<a class="right carousel-control" href="#map-carousel" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
+	<?php endif; ?>
+	<div class="caption-nav">
+		<a class="left carousel-control" href="#map-carousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<div class="carousel-caption-bg"><?php echo $caption_nav; ?></div>
+		<a class="right carousel-control" href="#map-carousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
 	</div>
+</div>
 </div>
 
 <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>

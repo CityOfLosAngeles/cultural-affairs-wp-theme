@@ -1,27 +1,31 @@
 <div class="container">
 	<div class="row"  id="grantee-list">
-		<?php
+	<?php
 		$args = array(
 			'post_type' => 'grantee',
 			'orderby' => 'menu_order',
 			'posts_per_page' => -1
 			);
+
 		$poststeam = new WP_Query($args);
-		if($poststeam->have_posts()){
+		if($poststeam->have_posts()){$i = 0;
 			$gallery_tabs = '';
 			$gallery_content = '';
+			
 			while($poststeam->have_posts()) {
 				$poststeam->the_post(); 
+
 				?>
-				<div class="col-xs-12 col-sm-3 grantee">
-					<div class="grantee-box">
+				
+					<div class="col-xs-12 col-sm-3 grantee">
+						<div class="grantee-box">
 						<a href="<?php the_permalink() ?>">
 							<div class="grantee-img">
-								<?php 
+							<?php 
 								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 									the_post_thumbnail();
 								} 
-								?>
+							?>
 							</div>
 							
 							<h2><?php the_title() ?></h2>
@@ -33,6 +37,6 @@
 			}
 			wp_reset_postdata();
 		}
-		?>
+	?>
 	</div>
 </div>

@@ -9,6 +9,10 @@
 			color: $warm-grey;
 		}
 	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 	header {
 		&.navbar {
 			border-bottom: 1px solid $gray;

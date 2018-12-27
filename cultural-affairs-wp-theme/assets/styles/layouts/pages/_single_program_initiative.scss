@@ -16,6 +16,7 @@
 		}
 	}
 	.wrap{
+
 		// Main Area
 		.main-area {
 			clear: left;
@@ -25,14 +26,18 @@
 				padding: 0;
 			}
 		}
+
 		// Side Area
 		.overview-area {
 			padding-bottom: 30px;
+
 			@media ( min-width: $screen-md ) {
 				float: right;
 				padding-bottom: 0;
 			}
+
 		}
+
 		h1 {
 			color: $green-blue;
 			&.entry-title {
@@ -67,6 +72,12 @@
 		.side-item {
 			border-left: 1px solid $green-blue;
 			padding-left: 15px;
+		}
+	}
+	article {
+		img {
+			max-width: 100%;
+			height: auto;
 		}
 	}
 }

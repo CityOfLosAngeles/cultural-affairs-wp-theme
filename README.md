@@ -1,19 +1,17 @@
 ## Overview
-This repository contains the theme code for the City of Los Angeles Department of Cultural Affairs’ website, http://culturela.org. This frontend theme code is developed for the Wordpress platform. This project is the result of a partnership between Department of Cultural Affairs (DCA) and contractor Kluge Interactive, http://klugeinteractive.com. Members of DCA and Kluge teamed up to design a template for the agency to provide the agency’s programming, facility and events information.
-This template code is a public, stable version. It can be downloaded as a zip to be installed in Wordpress. We encourage developers to use modify, merge, publish, distribute this code. Questions? Contact our team:
-Project coordinator: Wendy Hsu wendy.hsu@lacity.org
-Technical lead: Daniel Garcia daniel@klugeinteractive.com 
+This repository contains the theme code for the City of Los Angeles Department of Cultural Affairs’ website, http://culturela.org. This frontend theme code is developed for the Wordpress platform. This project is the result of a partnership between Department of Cultural Affairs (DCA) and contractor Kluge Interactive, http://klugeinteractive.com. Members of DCA and Kluge teamed up to design a template for the agency to provide the agency’s programming, facility and events information.   
+This template code is a public, stable version. It can be downloaded as a zip to be installed in Wordpress. We encourage developers to use modify, merge, publish, distribute this code. Questions? Contact our team:  
+Project coordinator: Wendy Hsu wendy.hsu@lacity.org  
+Technical lead: Daniel Garcia daniel@klugeinteractive.com
 
 ## Who is this for?
-Government and nonprofit arts agencies can benefit from this open source project. Organizations that don’t currently have technical staff or a content management system can leverage this theme as an entree into Wordpress, a robust and open source web authoring system. It enables non-technical staff to make content updates. 
-This theme is ready for use for municipal agencies in large or medium-sized cities or state-level arts agencies with events, facilities, venues, cultural sites, and programming in grants, public art, and arts education. Smaller nonprofit arts agencies may adapt and modify the theme based on the scope and form of their programming needs.
+Government and nonprofit arts agencies can benefit from this open source project. Organizations that don’t currently have technical staff or a content management system can leverage this theme as an entree into Wordpress, a robust and open source web authoring system. It enables non-technical staff to make content updates. This theme is ready for use for municipal agencies in large or medium-sized cities or state-level arts agencies with events, facilities, venues, cultural sites, and programming in grants, public art, and arts education. Smaller nonprofit arts agencies may adapt and modify the theme based on the scope and form of their programming needs.
 
 ## Goals
-We believe that this code contribution advances our agency’s public mission, a commitment to building public-serving information infrastructures that support arts and culture. By releasing our web template code, we hope to empower arts agencies to adopt and develop digital platforms in order to augment their services, contributing to the greater knowledge commons related to arts and culture in Los Angeles and beyond. A Wordpress project, our web work also contributes to the global community committed to sharing and developing open source webmaking tools. 
-We expect to continue our development of this theme code with plans to support digital service delivery to be designed in the near future. Contact us if you would like to learn about our development plans.
+We believe that this code contribution advances our agency’s public mission, a commitment to building public-serving information infrastructures that support arts and culture. By releasing our web template code, we hope to empower arts agencies to adopt and develop digital platforms in order to augment their services, contributing to the greater knowledge commons related to arts and culture in Los Angeles and beyond. A Wordpress project, our web work also contributes to the global community committed to sharing and developing open source webmaking tools. We expect to continue our development of this theme code with plans to support digital service delivery to be designed in the near future. Contact us if you would like to learn about our development plans.
 
 ## Licensing
-We have licensed this Wordpress theme code under the MIT open source license. The Department of Cultural Affairs retains the copyright of the code contained in this repository. 
+We have licensed this Wordpress theme code under the MIT open source license. The Department of Cultural Affairs retains the copyright of the code contained in this repository.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -60,39 +58,54 @@ Wordpress plugin dependencies:
 - The events calendar
 - The events calendar shortcode
 - The events calendar community events
+- The Events Calendar: Filter Bar
 - Constant contact API
+- Contact Form 7
+- Contact Form 7 Newsletter
+- Contact Form CFDB7
+- Relevanssi
 
 ## Templates
 
-The theme includes the following template files:
-archive-artist-projects.php
-archive-contact-division.php
-archive-council_district.php
-archive-cultural_center.php
-archive-grant_and_call.php
-archive-grantee.php
-archive-program_initiative.php
-index.php
-page.php - for static pages
-page-about.php - for about page
-page-city-art-collection.php - for city art collection page
-page-contact.php - for contact page
-page-media-room.php - for media room page
-page-murals-list.php - for murals list page
-page-murals.php - for murals page
-page-percent-public-art.php - for percent public art page
-page-prvate-arts-development-fee-program-pwiap.php - for static pages
-page-public-works-improvements-arts-program-pwiap.php - for static pages
-header.php
-sidebar.php
-footer.php
+The theme includes the following template files:  
+archive-artist-projects.php  
+archive-contact-division.php  
+archive-council_district.php  
+archive-cultural_center.php  
+archive-grant_and_call.php  
+archive-grantee.php  
+archive-program_initiative.php  
+index.php  
+page.php - static pages  
+page-about.php - about page  
+page-city-art-collection.php - city art collection page  
+page-contact.php - contact page  
+page-media-room.php - media room page  
+page-murals-list.php - murals list page  
+page-murals.php - murals page  
+page-percent-public-art.php - percent public art page  
+page-percent-public-art-projects.php - NEW percent for public art individual projects listing on the district pages  
+page-prvate-arts-development-fee-program-pwiap.php - static pages  
+page-public-works-improvements-arts-program-pwiap.php - static pages  
+header.php  
+sidebar.php  
+footer.php  
+template-events.php - NEW event detail template  
+template-two-columns.php - NEW two column component  
+component-image-slider.php - NEW image slider component  
+content-page-ppart-projects.php - NEW content template for percent for public art listing on the district pages  
+content-page-two-columns.php - NEW two column component on pages  
+page-events-header.php - NEW customizations on the main events page  
 
 ## Supported elements
  
-The theme supports featured images, menus and widgets and uses them as follows:
+The theme supports featured images, image slider, menus and widgets and uses them as follows:
  
 Featured images:
 These are displayed in the archive and index templates if they are present, using the medium size.
+
+Image slider:
+A custom component can be added to pages to show multiple images on a carousel or slider.
  
 Menus:
-The default menu is in header.php, and uses the Menus admin
+The default menu is in header.php, and uses the Menus admin.

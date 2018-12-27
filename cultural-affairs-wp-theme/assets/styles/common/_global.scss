@@ -1,4 +1,5 @@
 html, body { height: 100%; margin: 0; padding: 0; }
+
 body {
 	font-family: 'SansPro',sans-serif;
 	font-weight: 300;
@@ -30,10 +31,6 @@ h3 {
 h4, h5, h6 {
 	font-size: 12px;
 }
-img {
-	max-width: 100%;
-	height: auto;
-}
 .black-bg {
 	background-color: #000;
 }
@@ -51,6 +48,7 @@ img {
 	background-color: $grey;
 	color: #fff;
 	font-size: 12px;
+
 	a {
 		color: #fff;
 		text-decoration: none;
@@ -60,6 +58,7 @@ img {
 		}
 	}
 }
+
 // Headers
 .page, .archive, .single, .search {
 	.wrap{
@@ -72,6 +71,8 @@ img {
 		}
 	}
 }
+
+
 // FAQs
 // Panels
 .faq-list {
@@ -82,13 +83,16 @@ img {
 	border: 0;
 	margin: 0;
 	box-shadow: none;
+	
 	.panel-heading {
 		padding: 0;
 		border: 1px solid $light-grey;
 		background: #FCFCFC;
 	}
+
 	.panel-title {
 		font-weight: 700;
+
 		a {
 			color: $grey;
 			padding: 14px 45px 14px 20px;
@@ -96,12 +100,14 @@ img {
 			position: relative;
 			background-color: #FCFCFC;
 			text-decoration: none;
+
 			.control-icon {
 				width: 16px;
 				height: 16px;
 				position: absolute;
 				right: 20px;
 				top: 16px;
+
 				span {
 					background-color: $dark-grey;
 					width: 14px;
@@ -113,6 +119,7 @@ img {
 			}
 			&.collapsed {
 				background-color: #FCFCFC;
+
 				.control-icon {
 					span {
 						&.v {
@@ -126,6 +133,7 @@ img {
 			&:hover {
 				color: #fff;
 				background-color: $dark-grey;
+
 				.control-icon {
 					span {
 						background-color: #fff;
@@ -141,40 +149,42 @@ img {
 		}
 	}
 }
+
 // Grids
 .loading-container {
 	height: 37px;
 }
 .loading-div {
-	text-align: center;
-	width: 100%;
-	padding-bottom: 15px;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 15px;
 
-	.glyphicon.spinning {
-		@include animation(spin 1s infinite linear);
-	}
+  .glyphicon.spinning {
+      @include animation(spin 1s infinite linear);
+  }
 }
 .more-nav {
 	text-align: center;
 	clear: both;
 }
+
 // Posts paginations
 .nav-links {
 	& > div {
 		a {
 			color: #999;
-			padding: 15px;
-			text-decoration: none;
-			border: 1px solid #ededed;
-			display: inline-block;
-			background-color: transparent;
-			font-size: 14px;
+		    padding: 15px;
+		    text-decoration: none;
+		    border: 1px solid #ededed;
+		    display: inline-block;
+		    background-color: transparent;
+		    font-size: 14px;
 
-			&:hover {
-				background-color: #000;
-				color: #fff;
-				text-decoration: none!important;
-			}
+		    &:hover {
+		    	background-color: #000;
+		    	color: #fff;
+		    	text-decoration: none!important;
+		    }
 		}
 	}
 	.nav-previous {
@@ -192,7 +202,39 @@ img {
 		}
 	}
 }
+
 // LA City nav bar
-body > #global_nav_la_4324422 {
-	//background: #ccc !important;
+
+select[name="_ecp_custom_2"] {
+
+  /* styling */
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #fff, #fff);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
 }

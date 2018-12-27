@@ -1,15 +1,18 @@
 // Global Pages Styles
+
 .page-header {
-	border-bottom-width: 0px;
-	padding: 0;
-	margin-top: 0px;
-	margin-bottom: 30px;
+	border-bottom-width: 0;
+	padding            : 0;
+	margin-top         : 0;
+	margin-bottom      : 30px;
+
 	h1 {
 		text-transform: uppercase;
-		margin-top: 0px;
+		margin-top    : 0;
 		letter-spacing: 2px;
 	}
-	@media ( min-width: $screen-sm ) {
+
+	@media (min-width: $screen-sm) {
 		margin-bottom: 60px;
 
 		h1 {
@@ -17,48 +20,296 @@
 		}
 	}
 }
+
 // 404 Error
 .error404 {
 	background-color: $soft-grey;
 }
+
 .error-404-wrap {
-	text-align: center;
+	text-align : center;
 	padding-top: 30px;
+
 	.err-icon {
 		max-width: 120px;
-		height: auto;
+		height   : auto;
 	}
+
 	#anchor-list {
 		margin-top: 30px;
+
 		.table {
 			border-color: #ccc;
+
 			a {
-				display: inline-block;
-				padding: 30px 0;
-				color: $warm-grey;	
-				width: 100%;
-				text-decoration: none;	
+				display        : inline-block;
+				padding        : 30px 0;
+				color          : $warm-grey;
+				width          : 100%;
+				text-decoration: none;
 			}
+
 			td {
 				border-color: #ccc;
+
 				&:hover {
 					background-color: rgba(0,0,0,0.5);
+
 					a {
 						color: #fff;
 					}
-				}	
+				}
 			}
-			@media ( max-width: $screen-sm ) {
-				border: 0;
+			@media (max-width: $screen-sm) {
+				border       : 0;
 				border-bottom: 1px solid #ccc;
+
 				td {
-					display: block;
+					display      : block;
 					border-bottom: 0;
 				}
 			}
 		}
 	}
-	@media ( min-width: $screen-sm ) {
+
+	@media (min-width: $screen-sm) {
 		padding-top: 60px;
 	}
+}
+
+.circle {
+	border-radius: 18px;
+	border       : solid 1px #7c8ddd;
+	height       : 24px;
+	width        : 24px;
+	text-align   : center;
+	color        : #7c8ddd;
+	position     : relative;
+
+	&:before {
+		position: absolute;
+		right   : 0;
+		margin  : auto;
+		top     : -2px;
+		bottom  : 0;
+		left    : 2px;
+	}
+
+	a {
+		color: #7c8ddd;
+	}
+
+}
+
+.pagination-numbers {
+
+	text-align: center;
+
+	.go-to-page {
+		display : inline-block;
+		position: relative;
+
+		input[type=text] {
+			width  : 45px;
+			border : 1px solid $light-grey;
+			padding: 14px 10px;
+			outline: 0;
+		}
+
+		.error,
+		.error-number {
+			color      : red;
+			font-size  : 10px;
+			line-height: 1;
+			position   : absolute;
+			left       : 115px;
+			bottom     : -15px;
+		}
+
+		.page-label {
+			padding: 14px 20px;
+			display: inline-block;
+			color  : $warm-grey;
+		}
+
+		.page-numbers {
+			.page-links {
+				border          : 1px solid #000000;
+				color           : #fff;
+				font-weight     : 300;
+				font-size       : 16px;
+				background-color: $grey;
+
+				&:hover {}
+
+			}
+
+		}
+	}
+
+	.page-numbers {
+		font-size  : 14px;
+		font-weight: 600;
+		color      : purple;
+
+		.page-links {
+
+			border-top   : 1px solid $light-grey;
+			border-bottom: 1px solid $light-grey;
+			border-left  : 1px solid $light-grey;
+			display      : inline-block;
+			padding      : 14px 20px;
+
+			&:first-child(1) {
+				border-left : 0;
+				border-right: 1px solid $light-grey;
+			}
+
+			div {
+				color      : $warm-grey;
+				font-weight: 100;
+				font-size  : 16px;
+			}
+		}
+
+		&:nth-last-child(2) {
+			.page-links {
+				border-right: 1px solid $light-grey;
+			}
+		}
+
+		&:nth-last-child(3) {
+			.page-links {
+				border-right: 1px solid $light-grey;
+			}
+		}
+
+		&.current {
+			.page-links {
+				background-color: $grey;
+
+				div {
+					color: #fff;
+				}
+			}
+		}
+
+		&:hover {
+			.page-links {
+				background-color: $grey;
+
+				div {
+					color: #fff;
+				}
+			}
+		}
+
+		&:last-child {
+			.page-links {
+				border-right: 1px solid $light-grey;
+			}
+		}
+	}
+
+	.page-numbers.dots {
+		border-left: 1px solid $light-grey;
+		color      : $warm-grey;
+		font-weight: 100;
+		font-size  : 16px;
+		padding    : 15px;
+	}
+
+	.prev.page-numbers {
+		border      : 1px solid $light-grey;
+		padding     : 15px 24px;
+		color       : $warm-grey;
+		font-weight : 100;
+		font-size   : 16px;
+		margin-right: 14px;
+
+		&:hover {
+			background-color: $grey;
+			color           : #fff;
+		}
+	}
+
+	.next.page-numbers {
+		border     : 1px solid $light-grey;
+		padding    : 15px 37px;
+		color      : $warm-grey;
+		font-weight: 100;
+		font-size  : 16px;
+		margin-left: 14px;
+
+		&:hover {
+			background-color: $grey;
+			color           : #fff;
+		}
+	}
+
+	.mobile-paginator {
+		max-width: 365px;
+		margin   : auto;
+
+		.row {
+			display: inline;
+
+			.next.page-numbers {
+				margin-left: 0;
+				min-width  : 180px;
+				text-align : center;
+			}
+
+			.prev.page-numbers {
+				margin-right: 0;
+				min-width   : 180px;
+				text-align  : center;
+			}
+		}
+
+		.go-to-page {
+			input[type=text] {
+				width: 300px;
+			}
+		}
+	}
+
+}
+
+#constant-contact-signup-1 {
+	.cc_email_address {
+		input {
+			min-width         : 250px;
+			height            : 51px;
+			font-style        : normal;
+
+			border-top        : 1px solid white;
+			border-left       : 1px solid white;
+			border-bottom     : 1px solid white;
+			-webkit-transition: all .3s ease;
+			transition        : all .3s ease;
+
+			&:focus {
+				border-top   : 1px solid white;
+				border-left  : 1px solid white;
+				border-bottom: 1px solid white;
+				outline      : 0;
+			}
+		}
+	}
+}
+
+.subscribe-section .gform_wrapper .gfield .button {
+	height            : 51px;
+	-webkit-transition: all .3s ease;
+	transition        : all .3s ease;
+}
+
+.fb,
+.itg,
+.tw,
+a,
+button {
+	-webkit-transition: all .3s ease;
+	transition        : all .3s ease;
 }

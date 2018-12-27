@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="row">
   <div class="col-xs-12 col-md-8">
     <div class="press-releases">
@@ -7,18 +8,25 @@
       get_term( $term->term_id, 'media-room-categories' );
       ?>
       <div class="page-header">
-        <h1><?= __($term->name, 'sage'); ?></h1>
+        <h1><a href="/about/media-room/"><i class="fa fa-angle-left circle"></i></a> <?= __($term->name, 'sage'); ?></h1>
       </div>
       <div class="left-blue-border">
         <?php while (have_posts()) : the_post(); ?>
-          <?php
-          $date = DateTime::createFromFormat('Ymd', get_field('date'));
-          $file = get_field('file');
-          ?>
-          <div class="media-box">
-            <b><?= $date->format('m/d/y') ?></b>
-            <p><a href="<?= $file['url'] ?>"><?php the_title() ?></a></p>
-          </div>
+        <?php
+
+        
+        $date = get_field('date');
+        $t = explode("/",$date);
+        $file = get_field('file');
+        ?>
+        <div class="media-box">
+
+          <b><?php 
+          echo $t[1]."/".$t[0]."/".$t[2];
+            ?></b>
+          <p><a href="<?= $file['url'] ?>"><?php the_title() ?></a></p>
+
+        </div>
         <?php endwhile; ?>
       </div>
     </div>

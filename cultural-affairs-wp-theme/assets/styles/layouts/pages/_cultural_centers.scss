@@ -15,17 +15,20 @@
 		// Cultural Center Filter
 		#cultural-center-filter {
 			margin-bottom: 15px;
+
 			& > span {
 				float: left;
 				padding-top: 15px;
 				display: none;
 			}
+
 			.filter-items {
 				display: inline-block;
 				width: 100%;
 				margin: 0;
 				padding-left: 0;
 				border-bottom: 2px solid $green-blue;
+
 				li {
 					font-weight: 700;
 					color: $green-blue;
@@ -43,8 +46,10 @@
 					}
 				}
 			}
+
 			@media ( min-width: $screen-sm ) {
 				border-bottom: 2px solid $green-blue;
+
 				& > span {
 					display: block;
 				}
@@ -64,6 +69,7 @@
 		#classes-filter {
 			float: right;
 			padding-top: 15px;
+
 			span {
 				color: $pinkish-grey;
 				float: left;
@@ -78,6 +84,7 @@
 				margin-top: 4px;
 			}
 		}
+
 		// Cultural Center Grid
 		.loading-div {
 			display: none;
@@ -92,8 +99,10 @@
 		.cultural-center-box {
 			position: relative;
 			margin-bottom: 20px;
+
 			a {
 				text-decoration: none;
+
 				h2 {
 					margin-bottom: 5px;
 					margin-top: 15px;
@@ -109,8 +118,10 @@
 					display: inline-block;
 				}
 				.thumb-container {
+					
 					position: relative;
 					border: 1px solid $light-grey;
+
 					img {
 						height: auto;
 						width: 100%;
@@ -118,6 +129,7 @@
 						
 					}
 				}
+
 				&:hover, &:focus, &:active {
 					h2 {
 						color: $green-blue;
@@ -135,9 +147,9 @@
 		@media ( min-width: $screen-sm ) {
 			.cultural-center-box {
 				margin-bottom: 30px;
+
 				a {
 					.thumb-container {
-						/*height: 220px;*/
 						width: auto;
 						overflow: hidden;
 						height: 165px;
@@ -155,6 +167,7 @@
 		}
 		@media ( min-width: $screen-md ) {
 			.cultural-center-box {
+
 				a {
 					.thumb-container {
 						height: 200px;

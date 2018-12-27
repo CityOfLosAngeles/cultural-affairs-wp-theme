@@ -26,8 +26,7 @@ $event_id = get_the_ID();
 	
 
 	<!-- Notices -->
-	<?php tribe_events_the_notices() ?>
-	<?php //echo tribe_events_event_schedule_details( $event_id, '<div class="date-time">', '</div>' ); ?>
+	<?php tribe_the_notices() ?>
 	<?php the_title( '<h1 class="tribe-events-single-event-title summary entry-title">', '</h1>' ); ?>
 	<?php
 	echo tribe_get_event_categories(
@@ -89,14 +88,11 @@ $event_id = get_the_ID();
 						<?php the_content(); ?>
 					</div>
 					<!-- .tribe-events-single-event-description -->
-					<?php 
-					// Remove export links
-						//do_action( 'tribe_events_single_event_after_the_content' ) 
-					?>
 
 					<?php
 					// Event Location and Organizer
 					// If we have no map to embed and no need to keep the venue separate...
+					$set_venue_apart = apply_filters( 'tribe_events_single_event_the_meta_group_venue', false, get_the_ID() );
 					if ( ! $set_venue_apart && ! tribe_embed_google_map() ) {
 						tribe_get_template_part( 'modules/meta/venue' );
 					} elseif ( ! $set_venue_apart && ! tribe_has_organizer() && tribe_embed_google_map() ) {
@@ -146,7 +142,7 @@ $event_id = get_the_ID();
 						// Retrieve the next 5 upcoming events
 						$events = tribe_get_events( array(
 						    'posts_per_page' => 5,
-						    'start_date' => date("m-d-Y", strtotime('now')),
+						    'start_date' => date('Y-m-d H:i:s'),
 							'post__not_in' => array($post->ID)
 						) );
 						 
@@ -184,8 +180,12 @@ $event_id = get_the_ID();
 			<?php endwhile; ?>
 		</div>
 	</div>
-
-
+<div class="row">
+		<div class="col-xs-12">
+			
+	<section id="rest-events" data_event = "<?= $event_id ?>"></section>
+</div>
+	</div>
 
 	<div class="row">
 		<div class="col-xs-12">

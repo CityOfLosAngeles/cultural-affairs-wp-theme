@@ -1,4 +1,7 @@
 <?php
+// Don't load directly
+defined( 'WPINC' ) or die;
+
 /**
  * Event Submission Form Image Uploader Block
  * Renders the image upload field in the submission form.
@@ -6,50 +9,85 @@
  * Override this template in your own theme by creating a file at
  * [your-theme]/tribe-events/community/modules/image.php
  *
- * @package Tribe__Events__Community__Main
  * @since  3.1
- * @author Modern Tribe Inc.
+ * @version 4.5
  *
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-}
-
-$upload_error = Tribe__Events__Community__Main::instance()->max_file_size_exceeded();
-$size_format = size_format( wp_max_upload_size() );
-
+$upload_error = tribe( 'community.main' )->max_file_size_exceeded();
+$size_format  = size_format( wp_max_upload_size() );
+$image_label  = sprintf( __( '%s Image', 'tribe-events-community' ), tribe_get_event_label_singular() );
 ?>
 
-<!-- Event Featured Image -->
-<?php do_action( 'tribe_events_community_before_the_featured_image' ); ?>
+<div class="tribe-section tribe-section-image-uploader">
+	<div class="tribe-section-header">
+		<h3><?php echo esc_html( $image_label ); ?></h3>
+	</div>
 
-	<div class="tribe-events-community-details eventForm bubble" id="event_image_uploader">
+	<?php
+	/**
+	 * Allow developers to hook and add content to the beginning of this section
+	 */
+	do_action( 'tribe_events_community_section_before_featured_image' );
+	?>
 
-		<?php $small_div = "col-xs-12 col-sm-4 label-sm-right"; $big_div="col-xs-12 col-sm-8"; ?>
-
-		<div class="row">
-			<div class="<?= $small_div ?>">
-				<label for="EventImage" class="<?php echo esc_attr( $upload_error ? 'error' : '' ); ?>">
-					<?php tribe_community_events_field_label( 'event_image', __( 'Event Image:', 'tribe-events-community' ) ); ?>
-				</label>
+	<div class="tribe-section-content">
+		<?php
+		$class = '';
+		if ( get_post() && has_post_thumbnail() ) {
+			$class = 'has-image';
+		}
+		?>
+		<div class="tribe-image-upload-area <?php echo esc_attr( $class ); ?>">
+			<div class="note">
+				<p><?php echo esc_html( sprintf( __( 'Upload an image file (.jpg, .png, or .gif) that is at least 850px wide.', 'tribe-events-community' ), $size_format ) ); ?></p>
 			</div>
-			<div class="<?= $big_div ?>">
-				<?php if ( get_post() && has_post_thumbnail() ) { ?>
-					<div class="tribe-community-events-preview-image">
-						<?php the_post_thumbnail( 'medium' ); ?>
-						<?php tribe_community_events_form_image_delete(); ?>
+
+			<?php if ( get_post() && has_post_thumbnail() ) { ?>
+				<div class="tribe-community-events-preview-image">
+					<?php the_post_thumbnail( 'medium' ); ?>
+
+					<div>
+						<label for="uploadFile" class="uploaded-msg">
+							<?php esc_html_e( 'Uploaded:', 'tribe-events-community' ); ?>
+						</label>
+						<span class="current-image"><?php echo esc_html( basename( get_attached_file( get_post_thumbnail_id() ) ) ); ?></span>
 					</div>
-				<?php }	?>
 
-				<input type="file" name="event_image" id="EventImage">
-				<small class="note"><?php echo esc_html( sprintf( __( 'Images that are not png, jpg, or gif will not be uploaded. Images may not exceed %1$s in size.', 'tribe-events-community' ), $size_format ) ); ?></small>
+					<?php tribe_community_events_form_image_delete(); ?>
+				</div>
+			<?php } ?>
+
+			<div class="form-controls">
+
+				<label for="uploadFile" class="selected-msg">
+					<?php esc_html_e( 'Selected:', 'tribe-events-community' ); ?>
+				</label>
+
+				<input id="uploadFile" class="uploadFile" placeholder="" disabled="disabled"/>
+
+				<label for="EventImage" class="screen-reader-text <?php echo esc_attr( $upload_error ? 'error' : '' ); ?>">
+					<?php esc_html_e( 'Event Image', 'tribe-events-community' ); ?>
+				</label>
+
+				<div class="choose-file tribe-button tribe-button-secondary"><?php esc_html_e( 'Choose Image', 'tribe-events-community' ); ?></div>
+
+				<label for="uploadFile" class="screen-reader-text">
+					<?php esc_html_e( 'Upload File', 'tribe-events-community' ); ?>
+				</label>
+
+				<input id="EventImage" class="EventImage" type="file" name="event_image">
+
 			</div>
+
+			<div class="tribe-remove-upload"><a href="#"><?php esc_html_e( 'Remove image', 'tribe-events-community' ); ?></a></div>
 		</div>
+	</div>
 
-		
-		<table class="tribe-community-event-info" cellspacing="0" cellpadding="0"></table><!-- .tribe-community-event-info -->
-	</div><!-- .tribe-events-community-details -->
-
-<?php
-do_action( 'tribe_events_community_after_the_featured_image' );
+	<?php
+	/**
+	 * Allow developers to hook and add content to the end of this section
+	 */
+	do_action( 'tribe_events_community_section_after_featured_image' );
+	?>
+</div>

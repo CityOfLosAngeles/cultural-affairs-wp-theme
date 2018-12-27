@@ -1,5 +1,6 @@
 // Single Grant Page
 .single-grant_and_call {
+
 	// General Styles
 	h3 {
 		margin-bottom: 0;
@@ -7,6 +8,10 @@
 	}
 	a {
 		color: $green-blue;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
 	}
 	header {
 		&.navbar {
@@ -38,24 +43,30 @@
 			}
 		}
 	}
+
 	// Main Area Styles
 	.main-area {
+
 		.grant-slider {
 			margin-top: 20px;
 			margin-bottom: 0;
 		}
+
 		.bottom-section-item {
 			border-left: 2px solid $green-blue;
 			padding-left: 15px;
+
 			h2 {
 				margin-top: 40px;
 			}
 			ul {
 				color: $green-blue;
 				font-weight: 700;
+
 				li {
 					margin-bottom: 10px;
 				}
+
 				a {
 					text-decoration: none;
 
@@ -64,12 +75,14 @@
 					}
 				}
 			}
+
 			&.application-materials-section {
 				.top {
 					position: relative;
 				}
 				.app-materials-bundle {
 					display: inline-block;
+
 					.bundle-icon {
 						top: 0;
 						position: absolute;
@@ -77,6 +90,7 @@
 						width: 48px;
 						height: 48px;
 						border: 1px solid $light-grey;
+
 						svg {						
 							left: 50%;
 							margin-top: -8px;
@@ -99,6 +113,7 @@
 			&.faq-section {
 				ul {
 					padding: 0;
+
 					.panel-body {
 						color: $greyish-brown;
 						font-weight: 300;
@@ -110,16 +125,19 @@
 			}
 		}
 	}
+
 	// Side Area
 	.side-area {
 		.side-item {
 			border-top: 1px solid $light-grey;
 			padding-bottom: 20px;
+
 			h3 {
 				margin-top: 10px;
 				margin-bottom: 5px;
 			}
 		}
+
 		@media ( min-width: $screen-md ) {
 			float: right;
 		}

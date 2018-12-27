@@ -1,4 +1,5 @@
 .grantee-invoice-reporting-instructions {
+
 	// General Styles
 	h3 {
 		margin-bottom: 0;
@@ -6,6 +7,10 @@
 	}
 	a:not(.btn) {
 		color: $green-blue;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
 	}
 	header {
 		&.navbar {
@@ -40,9 +45,12 @@
 			}
 		}
 	}
+
 	.intro {
 		p {
 			margin-bottom: 0;
 		}
 	}
+
+	
 }

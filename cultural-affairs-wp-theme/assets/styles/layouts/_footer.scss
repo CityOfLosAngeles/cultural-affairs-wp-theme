@@ -20,7 +20,59 @@
 		text-decoration: underline;
 	}
 
-	//constant contact plugin
+	// New Constant Contact Plugin (From Aug 2018)
+	.ctct-message {
+		&.success {
+			display: inline-block;
+			border: 0;
+			padding: 0;
+		}
+	}
+	.ctct-form {
+		.ctct-button {
+			display: none;
+		}
+		.ctct-form-field {
+			display: inline-block;
+			margin-bottom: 0;
+			label {
+				display: none;
+			}
+			input[type="email"] {
+				border: 1px solid #fff;
+				padding: 12.5px;
+				border-right: 0;
+				color: #fff;
+				min-width: 250px;
+				&::placeholder {
+					//color: #fff;
+				}
+				&:required:valid {
+					background-color: transparent;
+					padding-left: 40px;
+				}
+			}
+		}
+		.ctct-form-field-submit {
+			display: inline-block;
+			vertical-align: top;
+			.ctct-submit {
+				padding: 14px 22px;
+			}
+		}
+		.ctct-disclosure {
+			display: inline-block;
+			display: none;
+			a {
+				color:#fff;
+				&:hover, &:active, &:focus {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	//OLD constant contact plugin (Until Aug 2018)
 	#constant-contact-signup-errors {
 		ul {
 			padding: 0;
@@ -41,9 +93,15 @@
 	.gform_wrapper {
 		.gfield {
 			display: inline-block;
-
+			vertical-align: top;
 			.button {
-				padding: 14px 22px;
+				padding: 14.3px 22px;
+			}
+			label {
+				margin-bottom: 0;
+			}
+			&.cc_email_address input {
+				line-height: 23px;
 			}
 		}
 	}
@@ -51,6 +109,7 @@
 		margin-top: 60px;
 	}
 }
+
 // Footer
 footer {
 	color: $greyish-brown;
@@ -112,6 +171,7 @@ footer {
 				padding-bottom: 0;
 			}
 		}
+
 		// Quick Links
 		.quicklinks-footer {
 			.menu {
@@ -128,7 +188,11 @@ footer {
 				}
 			}
 		}
+
 		// Connect Section
+		.connect-footer {
+		}
+
 		.footer-social-icons {
 			padding-bottom: 10px;
 
@@ -202,6 +266,25 @@ footer {
 			}
 		}
 	}
+	.footer-kluge{
+		border-top: 1px solid #ededed;
+		.klugeLogo {
+		    background: url(../images/general/KlugeSignatureForWhiteBg.png) no-repeat 0 0;
+		    width: 113px;
+		    height: 36px;
+		    margin-top: 10px;
+		    float: right;
+		    &:hover {
+		    	background-position: 0 -40px;
+		    }
+		}
+		@media ( min-width: $screen-sm ) {
+			.klugeLogo {
+		    	float: right;
+		    	margin-right: 20px;
+		    }
+	    }
+	}
 	.back-top {
 		a {
 			display: inline-block;
@@ -230,4 +313,8 @@ footer {
 			}
 		}
 	}
+}
+
+div#footer{
+display: none;
 }

@@ -1,24 +1,25 @@
 <?php
-$hero_image = get_field('hero_image');
-$bg_style = "";
-if ($hero_image) {
-	$bg_style = "background-image:url(".$hero_image.")";
-}else {
+	$hero_image = get_field('hero_image');
 	$bg_style = "";
-}
+	if ($hero_image) {
+		$bg_style = "background-image:url(".$hero_image.")";
+	}else {
+		$bg_style = "";
+	}
 ?>
 <div class="row hero-image" id="hero" style="<?= $bg_style ?>">
 	<div class="container">
+		<div class="bottom-hero-text text-center white-txt"><small>Department of Cultural Affairs</small></div>
 		<div class="left-hero-news">
 			<?php
 			$featured_items = get_field('hero_featured_items');
 			if( $featured_items ): ?>
-			<?php foreach( $featured_items as $f ): // variable must NOT be called $post (IMPORTANT) ?>
-				<a href="<?php echo get_permalink( $f->ID ); ?>" title="<?php echo get_the_title( $f->ID ); ?>" class="hero-news"><?php echo get_the_title( $f->ID ); ?></a>
-			<?php endforeach; ?>
+				<?php foreach( $featured_items as $f ): // variable must NOT be called $post (IMPORTANT) ?>
+				    	<a href="<?php echo get_permalink( $f->ID ); ?>" title="<?php echo get_the_title( $f->ID ); ?>" class="hero-news"><?php echo get_the_title( $f->ID ); ?></a>
+				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
-		<div class="bottom-hero-text text-center white-txt"><small>The official website of the City of Los Angeles Department of Cultural Affairs.</small></div>
+		
 	</div>
 	<div class="gradient-lw"></div>
 </div>

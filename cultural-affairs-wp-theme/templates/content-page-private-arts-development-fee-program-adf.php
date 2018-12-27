@@ -1,20 +1,34 @@
 <div class="container">
   <div class="row intro">
+    <?php if(get_field('slider_position') == 'top'){ ?>
+      <div class="col-md-9">
+        <?php get_template_part('templates/component', 'image-slider'); ?>
+      </div>
+    <?php } ?>
     <div class="col-md-9"><?= the_content(); ?></div>
+    <?php if(get_field('slider_position') == 'bottom'){ ?>
+      <div class="col-md-9">
+        <?php get_template_part('templates/component', 'image-slider'); ?>
+      </div>
+  <?php } ?>
   </div>
+
   <div class="row quick-links-programs">
     <div class="col-md-9">
-      <?php if( have_rows('quick_links') ): ?>
-        <div class="bottom-spacing">
-          <div class="side-item">
-            <h2><?= __('Quick Links', 'sage'); ?></h2>
-            <ul>
-              <?php while ( have_rows('quick_links') ) : the_row(); ?>
-                <li><a href="<?= get_sub_field('url') ?>"><?= get_sub_field('text') ?></a></li>
-              <?php endwhile; ?>
-            </ul>
-          </div>
+    <?php if( have_rows('quick_links') ): ?>
+      
+      <div class="bottom-spacing">
+        <div class="side-item">
+          <h2><?= __('Quick Links', 'sage'); ?></h2>
+          <ul>
+            <?php while ( have_rows('quick_links') ) : the_row(); ?>
+            <li><a href="<?= get_sub_field('url') ?>"><?= get_sub_field('text') ?></a></li>
+            <?php endwhile; ?>
+          </ul>
+
         </div>
+      </div>
+      
       <?php endif; ?>
     </div>
   </div>
@@ -23,36 +37,45 @@
     <?php $ct = 0; ?>
     <div class="col-md-9">
       <div class="faq-section">
-        <h2><?= __('Frequently Asked Questions', 'sage'); ?></h2>
+        
+          <h2><?= __('Frequently Asked Questions', 'sage'); ?></h2>
+
         <ul>
           <?php
-          // loop through the rows of data
-          while ( have_rows('frequently_ask_questions') ) : the_row();
-          // vars
-          $title  = get_sub_field('question');
-          $content     = get_sub_field('answer');
-          $ct++;
+            // loop through the rows of data
+              while ( have_rows('frequently_ask_questions') ) : the_row();
+                // vars
+                $title  = get_sub_field('question');
+                $content     = get_sub_field('answer');
+                $ct++;
+
+                  ?>
+                  <div class="panel panel-default">
+
+                      <div class="panel-heading" role="tab" id="heading<?php echo $ct ?>">
+                        <h4 class="panel-title">
+                          <a <?php if($ct != 1) { echo 'class="collapsed"'; }?> data-toggle="collapse" href="#collapse<?php echo $ct ?>" aria-expanded="true" aria-controls="collapse<?php echo $ct ?>">
+                            <?= $title ?>
+                            <div class="control-icon"><span class="h"></span><span class="v"></span></div>
+                          </a>
+                        </h4>
+                      </div>
+
+                      <div id="collapse<?php echo $ct ?>" class="panel-collapse collapse <?php if($ct == 1) { echo 'in'; }?>" role="tabpanel" aria-labelledby="heading<?php echo $ct ?>">
+                        <div class="panel-body">
+                          <?= $content ?>
+                        </div>
+                      </div>
+
+                  </div>
+                  <?php
+
+              endwhile;
           ?>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading<?php echo $ct ?>">
-              <h4 class="panel-title">
-                <a <?php if($ct != 1) { echo 'class="collapsed"'; }?> data-toggle="collapse" href="#collapse<?php echo $ct ?>" aria-expanded="true" aria-controls="collapse<?php echo $ct ?>">
-                  <?= $title ?>
-                  <div class="control-icon"><span class="h"></span><span class="v"></span></div>
-                </a>
-              </h4>
-            </div>
-            <div id="collapse<?php echo $ct ?>" class="panel-collapse collapse <?php if($ct == 1) { echo 'in'; }?>" role="tabpanel" aria-labelledby="heading<?php echo $ct ?>">
-              <div class="panel-body">
-                <?= $content ?>
-              </div>
-            </div>
-          </div>
-          <?php endwhile; ?>
         </ul>
+        </div>
       </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
   </div>
 </div>
 <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>

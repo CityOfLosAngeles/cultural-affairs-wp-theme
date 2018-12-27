@@ -29,6 +29,7 @@
     margin-left: ($line-height-computed / 2);
   }
 }
+
 // Captions
 .wp-caption {
   @extend .thumbnail;
@@ -36,6 +37,7 @@
 .wp-caption-text {
   padding: $thumbnail-caption-padding;
 }
+
 // Text meant only for screen readers
 .screen-reader-text {
   @extend .sr-only;

@@ -1,7 +1,7 @@
 <?php use Roots\Sage\Titles; ?>
 <div class="page-header">
-	<h1><?= Titles\title(); ?></h1>
-	<p>The DCA Community Arts Division fosters the arts through numerous Cultural Centers and theaters which you can explore here.</p>
+	<h1><?= get_field('cc_title','options') ?></h1>
+	<p><?= get_field('cc_description','options') ?></p>
 </div>
 
 <?php if (!have_posts()) : ?>

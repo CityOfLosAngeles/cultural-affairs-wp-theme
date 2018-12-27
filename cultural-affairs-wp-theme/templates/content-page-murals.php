@@ -1,4 +1,7 @@
 <div class="container">
+	<?php if(get_field('slider_position') == 'top'){ ?>
+		<?php get_template_part('templates/component', 'image-slider'); ?>
+	<?php } ?>
 	<div class="row intro">
 		<div class="col-xs-12"><?= get_field('intro_text') ?></div>
 	</div>
@@ -34,93 +37,107 @@
 
 	<div class="row">
 		<div class="col-md-9">
+
 			<?php if( have_rows('frequently_ask_question') ): ?>
 			<?php $ct = 0; ?>
 			<div class="faq-section bottom-section-item">
 				<h2><?= __('Frequently Asked Questions', 'sage'); ?></h2>
 				<ul>
 					<?php
-					// loop through the rows of data
+			          // loop through the rows of data
 					while ( have_rows('frequently_ask_question') ) : the_row();
-					// vars
+			              // vars
 					$title  = get_sub_field('question');
 					$content     = get_sub_field('answer');
 					$ct++;
 
 					?>
-						<div class="panel panel-default">
+					<div class="panel panel-default">
 
-							<div class="panel-heading" role="tab" id="heading<?php echo $ct ?>">
-								<h4 class="panel-title">
-									<a <?php if($ct != 1) { echo 'class="collapsed"'; }?> data-toggle="collapse" href="#collapse<?php echo $ct ?>" aria-expanded="true" aria-controls="collapse<?php echo $ct ?>">
-										<?= $title ?>
-										<div class="control-icon"><span class="h"></span><span class="v"></span></div>
-									</a>
-								</h4>
-							</div>
-
-							<div id="collapse<?php echo $ct ?>" class="panel-collapse collapse <?php if($ct == 1) { echo 'in'; }?>" role="tabpanel" aria-labelledby="heading<?php echo $ct ?>">
-								<div class="panel-body">
-									<?= $content ?>
-								</div>
-							</div>
-
+						<div class="panel-heading" role="tab" id="heading<?php echo $ct ?>">
+							<h4 class="panel-title">
+								<a <?php if($ct != 1) { echo 'class="collapsed"'; }?> data-toggle="collapse" href="#collapse<?php echo $ct ?>" aria-expanded="true" aria-controls="collapse<?php echo $ct ?>">
+									<?= $title ?>
+									<div class="control-icon"><span class="h"></span><span class="v"></span></div>
+								</a>
+							</h4>
 						</div>
-					<?php endwhile; ?>
+
+						<div id="collapse<?php echo $ct ?>" class="panel-collapse collapse <?php if($ct == 1) { echo 'in'; }?>" role="tabpanel" aria-labelledby="heading<?php echo $ct ?>">
+							<div class="panel-body">
+								<?= $content ?>
+							</div>
+						</div>
+
+					</div>
+					<?php
+
+					endwhile;
+					?>
 				</ul>
 			</div>
-			<?php endif; ?>
-		</div>
-	</div>
-
-	<div class="featured-murals-section">
-		<h1>FEATURED MURALS</h1>
-		<p>Check out our recent conservation and new mural projects.</p>
-		<div class="featured-murals row">
-			<?php
-			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-			$args = array(
-				'post_type' => 'artists-projects',
-				'posts_per_page' => 3,
-				'order' => 'DESC',
-				'paged' => $paged,
-				'taxonomy'=>'artist-project-type',
-				'term'=> 'murals',
-				);
-			$poststeam = new WP_Query($args);
-			if($poststeam->have_posts()){
-				$gallery_tabs = '';
-				$gallery_content = '';
-				while($poststeam->have_posts()) {
-					$poststeam->the_post(); 
-					?>
-					<div class="col-xs-12 col-sm-4">
-						<div class="projects-box">
-							<a href="<?php the_permalink() ?>">
-								<div class="projects-img">
-									<?php 
-				                    if ( has_post_thumbnail( ) ) { // check if the post has a Post Thumbnail assigned to it.
-				                    	echo get_the_post_thumbnail();
-				                    } 
-				                    ?>
-				                </div>
-
-				                <h2><?php the_title() ?></h2>
-				                <div class="short-description"><?php the_excerpt(); ?></div>
-				            </a>
-				        </div>
-				    </div>
-				    <?php
-				}
-				wp_reset_postdata();
-			}
-			?>
-		</div>
-		<?php if ($poststeam->max_num_pages > 1): ?>
-			<hr class="sep" />
-			<a title="View All Murals" href="murals-list/" class="btn">View All Murals</a>
 		<?php endif; ?>
 	</div>
 </div>
+<?php if(get_field('slider_position') == 'bottom'){ ?>
+	<?php get_template_part('templates/component', 'image-slider'); ?>
+<?php } ?>
+<div class="featured-murals-section">
+	<h1>FEATURED MURALS</h1>
+	<p>Check out our recent conservation and new mural projects.</p>
+
+	<div class="featured-murals row">
+		<?php
+		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+		$args = array(
+			'post_type' => 'artists-projects',
+			'posts_per_page' => 3,
+			'order' => 'DESC',
+			'paged' => $paged,
+			'taxonomy'=>'artist-project-type',
+			'term'=> 'murals',
+			);
+
+		$poststeam = new WP_Query($args);
+		if($poststeam->have_posts()){$i = 0;
+			$gallery_tabs = '';
+			$gallery_content = '';
+			
+			while($poststeam->have_posts()) {
+				$poststeam->the_post(); 
+
+				?>
+				
+				<div class="col-xs-12 col-sm-4">
+					<div class="projects-box">
+						<a href="<?php the_permalink() ?>">
+							<div class="projects-img">
+								<?php 
+			                    if ( has_post_thumbnail( ) ) { // check if the post has a Post Thumbnail assigned to it.
+			                    	echo get_the_post_thumbnail();
+			                    } 
+			                    ?>
+			                </div>
+
+			                <h2><?php the_title() ?></h2>
+			                <div class="short-description"><?php the_excerpt(); ?></div>
+			            </a>
+			        </div>
+			    </div>
+			    <?php
+			}
+			wp_reset_postdata();
+		}
+		?>
+	</div>
+	<?php if ($poststeam->max_num_pages > 1): ?>
+		<hr class="sep" />
+		<a title="View All Murals" href="murals-list/" class="btn">View All Murals</a>
+	<?php endif; ?>
+</div>
+
+</div>
+
 
 <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>

@@ -11,6 +11,7 @@
 		}
 		a {
 			text-decoration: none;
+			
 		}
 		#program-list {
 			@media ( min-width: $screen-sm ) {
@@ -51,7 +52,7 @@
 					&.btn {
 						color: #fff;
 						background-color: #000;
-						border-color: #000;
+    					border-color: #000;
 					}
 				}
 				img {

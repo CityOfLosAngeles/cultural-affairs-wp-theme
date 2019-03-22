@@ -1,7 +1,7 @@
 ## Overview
 This repository contains the theme code for the City of Los Angeles Department of Cultural Affairs’ website, http://culturela.org. This frontend theme code is developed for the Wordpress platform. This project is the result of a partnership between Department of Cultural Affairs (DCA) and contractor Kluge Interactive, http://klugeinteractive.com. Members of DCA and Kluge teamed up to design a template for the agency to provide the agency’s programming, facility and events information.   
 This template code is a public, stable version. It can be downloaded as a zip to be installed in Wordpress. We encourage developers to use modify, merge, publish, distribute this code. Questions? Contact our team:  
-Project coordinator: Wendy Hsu wendy.hsu@lacity.org  
+Project coordinator: Umi Hsu umi.hsu@lacity.org  
 Technical lead: Daniel Garcia daniel@klugeinteractive.com
 
 ## Who is this for?
